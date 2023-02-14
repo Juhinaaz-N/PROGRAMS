@@ -1,0 +1,45 @@
+h5{
+color: gray;
+text-align: center;
+}
+
+h2
+{
+    color: black;
+    font-weight: bolder;
+}
+
+p
+{
+    color: gray;
+}
+
+.image
+{
+    height: 69vh;
+    width: 26vw;
+}
+
+body
+{
+    background-color: black;
+}
+
+.div2
+{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 15px 15px 0px 0px ;
+    background-color: white;
+}
+
+.div1
+{
+    width: 26vw;
+    margin-left: 210px;
+}
+
+.j
+{
+    margin-left: 150px;
+    border-radius: 12px;
+}

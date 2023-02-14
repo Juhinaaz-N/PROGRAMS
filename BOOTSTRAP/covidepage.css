@@ -1,0 +1,57 @@
+p
+{
+    font-size: x-large;
+}
+.butt
+{
+    border-radius: 8px;
+}
+
+
+.button
+{
+    border-radius: 8px;
+}
+.div1
+{
+    height: 96px;
+    width: 120px;
+    margin: 12px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.j
+{
+    background-color: skyblue;
+    border-radius: 15px;
+    height: 12vh;
+    margin: 19px;
+}
+
+.div2
+{
+    margin-left: 530px;
+}
+
+.u{
+background-color: pink;
+border-radius: 15px;
+height: 26vh;
+margin: 19px;
+}
+
+.c1
+{
+    background-color: green;
+}
+
+.c2
+{
+    background-color: palevioletred;
+}
+
+.c3
+{
+    background-color: purple;
+}

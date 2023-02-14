@@ -1,0 +1,31 @@
+.butt
+{
+    border-radius: 8px;
+    color:black;
+    background-color: white;
+    width: 120px;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.image1
+{
+    background-image: url(" https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/hotelbg.png");
+    background-size: cover;
+    height: 100vh;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.image2
+{
+    background-color: black;
+    color: white;
+    border-radius: 12px;
+    opacity: 0.6;
+    width: 60vw;
+    padding: 8px;
+    margin-right: auto;
+    margin-left: auto;
+}

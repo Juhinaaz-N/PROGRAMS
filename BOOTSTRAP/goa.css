@@ -1,0 +1,25 @@
+.images1
+{
+    height: 96vh;
+    width: 100vw;
+}
+
+.images
+{
+    height: 210px;
+    width: 260px;
+    margin: 12px;
+}
+
+.videos
+{
+height: 210px;
+    width: 260px;
+    margin: 12px;
+    border-radius: 12px;
+}
+
+p
+{
+    color: gray;
+}

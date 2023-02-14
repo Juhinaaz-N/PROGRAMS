@@ -1,0 +1,57 @@
+h1
+{
+    font-size: xx-large;
+    font-weight: bolder;
+    color: blue;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+body{
+    background-color: skyblue;
+}
+.image1
+{
+    height: 21vh;
+    width: 12vw;
+}
+
+.image2
+{
+    height: 21vh;
+    width: 12vw;
+}
+
+.image3
+{
+    height: 21vh;
+    width: 12vw;
+}
+
+
+.child
+{
+    padding:21px;
+    color: azure;
+}
+
+.child1
+{
+    margin: 12px;
+    background-color:navy;
+    text-align: center;
+}
+
+.child2
+{
+    margin: 12px;
+    background-color:navy;
+    text-align: center;
+}
+
+.child3
+{
+    margin: 12px;
+    background-color:navy;
+    text-align: center;
+}

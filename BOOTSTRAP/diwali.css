@@ -1,0 +1,59 @@
+.j
+{
+    margin-left: 710px;
+}
+
+.image2
+{
+    height: 12vh;
+    width: 8vw;
+}
+
+.image3
+{
+    height: 12vh;
+    width: 8vw;
+}
+
+.image4
+{
+    height: 12vh;
+    width: 8vw;
+}
+
+.image5
+{
+    height: 12vh;
+    width: 8vw;
+}
+
+.u
+{
+    background-color: skyblue;
+}
+
+.div1
+{
+    background-color: azure;
+    height: 26vh;
+    width: 21vw;
+    margin: 12px;
+    padding-left: 75px;
+    border-radius: 8px;
+}
+
+header{
+background-image:url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/diwali-bg.png");
+height: 66vh;
+    width: 100vw;
+}
+
+.div2
+{
+    color: white ;
+    font-family: cursive;
+    font-size: xx-large;
+    position: relative;
+    padding-left: 120px;
+    padding-top: 120px;
+}

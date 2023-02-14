@@ -1,0 +1,36 @@
+.div1
+{
+background-image: url("https://st3.depositphotos.com/5653638/16809/i/600/depositphotos_168092820-stock-photo-stock-photo-of-indian-sweet.jpg");
+background-size: cover;
+height: 80vh;
+}
+
+h1
+{
+    font-size: xx-large;
+    font-weight: bolder;
+    color: purple;
+    background-color: palevioletred;
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+p
+{
+    font-weight: 538;
+    text-align: center;
+}
+
+
+.div2
+{
+    background-color: palevioletred;
+}
+.but
+{
+    height: 35px;
+    width: 120px;
+    background-color: pink;
+    text-align: center;
+    margin-left: 660px;
+}

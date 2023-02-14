@@ -1,0 +1,72 @@
+.child1
+{
+    background-color:red;
+    padding: 15px;
+    color: white;
+}
+
+p
+{
+    font-size: large;
+}
+
+body
+{
+    background-color: skyblue;
+}
+
+.u
+{
+    background-color: white;
+    border-radius: 21px;
+    margin: 21px;
+}
+
+.i
+{
+    padding: 8px;
+    margin: 15px;
+}
+
+.z
+{
+    margin: 15px;
+    border-radius: 8px;
+}
+
+.image1
+{
+    margin-left: 178px;
+    height: 17vh;
+    width: 13vw;
+}
+
+.image2
+{
+    height: 17vh;
+    width: 13vw;
+}
+
+.image3
+{
+    height: 12vh;
+    width: 8vw;
+}
+
+.image4
+{
+    height: 12vh;
+    width: 8vw;
+}
+
+.image5
+{
+    height: 12vh;
+    width: 8vw;
+}
+
+.button
+{
+    border-radius: 8px;
+    margin-left: 750px;
+}

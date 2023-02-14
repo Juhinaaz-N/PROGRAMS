@@ -1,0 +1,70 @@
+h1
+{
+    font-size: xx-large;
+    font-weight: bolder;
+    color: purple;
+    background-color: pink;
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.image1
+{
+    height: 15vh;
+    width: 8vw;
+}
+
+.image2
+{
+    height: 15vh;
+    width: 8vw;
+}
+
+.image3
+{
+    height: 15vh;
+    width: 8vw;
+}
+
+
+.child
+{
+    padding:21px;
+    background-color: plum;
+}
+
+.child1
+{
+    margin: 12px;
+    background-color:orchid;
+}
+
+.child2
+{
+    margin: 12px;
+    background-color:orchid;
+}
+
+.child3
+{
+    margin: 12px;
+    background-color:orchid;
+}
+
+.but1
+{
+    height: 35px;
+    width: 178px;
+    background-color: pink;
+    text-align: center;
+    margin-left: 600px;
+}
+
+.but2
+{
+    height: 35px;
+    width: 178px;
+    background-color: pink;
+    text-align: center;
+}

@@ -1,0 +1,30 @@
+h2
+{
+    color: navy;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+}
+
+.image
+{
+    height: 69vh;
+    width: 24vw;
+}
+
+body
+{
+    background-color: black;
+}
+
+.div2
+{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 15px 15px 0px 0px ;
+    background-color: white;
+}
+
+.div1
+{
+    width: 24vw;
+    margin-left: 210px;
+}

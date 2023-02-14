@@ -1,0 +1,36 @@
+.para
+{
+    text-align: justify;
+    margin: 12px;
+    padding: 21px;
+}
+
+.para1
+{
+    text-align: justify;
+    margin: 12px;
+    padding: 21px;
+}
+
+.para2
+{
+    text-align: justify;
+    margin: 12px;
+    padding: 21px;
+}
+h2
+{
+    font-weight: bolder;
+    font-size: larger;
+}
+.image
+{
+    height: 88vh;
+}
+
+li{
+    list-style-type: none;
+    display: inline-block;
+    color: skyblue;
+    padding: 8px;
+}

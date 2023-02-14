@@ -1,0 +1,78 @@
+.para1
+{
+    text-align: justify;
+    margin: 12px;
+    padding: 21px;
+    color: palevioletred;
+}
+
+.para2
+{
+    text-align: justify;
+    margin: 12px;
+    padding: 21px;
+    color: palevioletred;
+}
+
+.para3
+{
+    text-align: justify;
+    margin: 12px;
+    padding: 21px;
+    color: palevioletred;
+}
+
+h2
+{
+    font-weight: bolder;
+    font-size: larger;
+    color: purple;
+}
+
+
+.j
+{
+    font-weight: bolder;
+    font-size:x-large;
+    color: black;
+}
+.image1
+{
+    height: 57vh;
+}
+
+.image2
+{
+    height: 57vh;
+}
+.image3
+{
+    height: 57vh;
+}
+
+.u
+{
+    height: 35px;
+    width: 178px;
+    background-color: palevioletred;
+    text-align: center;
+    margin-left: 600px;
+}
+
+.i
+{
+    height: 35px;
+    width: 178px;
+    background-color: palevioletred;
+    text-align: center;
+}
+
+h1
+{
+    font-size: xx-large;
+    font-weight: bolder;
+    color: purple;
+    background-color: palevioletred;
+    text-align: center;
+    font-family:'Courier New', Courier, monospace;
+}
