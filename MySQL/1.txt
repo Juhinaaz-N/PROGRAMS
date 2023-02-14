@@ -1,0 +1,91 @@
+Enter password: *********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 19
+Server version: 8.0.32 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+
+
+mysql> create database Student1;
+Query OK, 1 row affected (0.07 sec)
+
+mysql> use Student1;
+Database changed
+
+mysql> create table student(name varchar(200), age int,score int);
+Query OK, 0 rows affected (0.10 sec)
+mysql> desc student;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| name  | varchar(200) | YES  |     | NULL    |       |
+| age   | int          | YES  |     | NULL    |       |
+| score | int          | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> create table customer(customer_id int, first_name varchar(200), last_name varchar(200), date_of_birth date, address text, phone_number int);
+Query OK, 0 rows affected (0.14 sec)
+mysql> desc customer;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| customer_id   | int          | YES  |     | NULL    |       |
+| first_name    | varchar(200) | YES  |     | NULL    |       |
+| last_name     | varchar(200) | YES  |     | NULL    |       |
+| date_of_birth | date         | YES  |     | NULL    |       |
+| address       | text         | YES  |     | NULL    |       |
+| phone_number  | int          | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+6 rows in set (0.01 sec)
+
+mysql> create table player(name varchar(200), age int,score int);
+Query OK, 0 rows affected (0.17 sec)
+mysql> desc player;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| name  | varchar(200) | YES  |     | NULL    |       |
+| age   | int          | YES  |     | NULL    |       |
+| score | int          | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> insert into player values('Ram',28,30);
+Query OK, 1 row affected (0.05 sec)
+mysql> select * from player;
++------+------+-------+
+| name | age  | score |
++------+------+-------+
+| Ram  |   28 |    30 |
++------+------+-------+
+1 row in set (0.00 sec)
+
+mysql> insert into player values('Suresh',21,70),('Venkat',21,43);
+Query OK, 2 rows affected (0.08 sec)
+mysql> select * from player;
++--------+------+-------+
+| name   | age  | score |
++--------+------+-------+
+| Suresh |   21 |    70 |
+| Venkat |   21 |    43 |
++--------+------+-------+
+2 rows in set (0.00 sec)
+
+mysql>  delete from player where name='Venkat';
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select * from player;
++--------+------+-------+
+| name   | age  | score |
++--------+------+-------+
+| Suresh |   21 |    70 |
++--------+------+-------+
+1 row in set (0.00 sec)

@@ -1,0 +1,199 @@
+1.SQL QUERY TO ADD THE FOLLOWING DETAILS IN THE PLAYER TABLE
+
+mysql> use practice2;
+Database changed
+mysql> create table player2(name varchar(25),age int,score int);
+Query OK, 0 rows affected (0.08 sec)
+mysql> desc player2;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| name  | varchar(25) | YES  |     | NULL    |       |
+| age   | int         | YES  |     | NULL    |       |
+| score | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+
+2.SQL QUERY TO ADD THREE NEW PLAYERS TO THE PLAYER  TABLE
+
+mysql> insert into player2 values('Raj',26,120);
+Query OK, 1 row affected (0.02 sec)
+mysql> desc player2;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| name  | varchar(25) | YES  |     | NULL    |       |
+| age   | int         | YES  |     | NULL    |       |
+| score | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+
+mysql> select * from player2;
++------+------+-------+
+| name | age  | score |
++------+------+-------+
+| Raj  |   26 |   120 |
++------+------+-------+
+1 row in set (0.00 sec)
+
+mysql> insert into player2 values('Ram',28,125),('Charan',25,173),('Ravan',20,152);
+Query OK, 3 rows affected (0.04 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> desc player2;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| name  | varchar(25) | YES  |     | NULL    |       |
+| age   | int         | YES  |     | NULL    |       |
+| score | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.06 sec)
+
+mysql> select * from player2;
++--------+------+-------+
+| name   | age  | score |
++--------+------+-------+
+| Raj    |   26 |   120 |
+| Ram    |   28 |   125 |
+| Charan |   25 |   173 |
+| Ravan  |   20 |   152 |
++--------+------+-------+
+4 rows in set (0.08 sec)
+mysql> delete from player2 where name='Raj';
+Query OK, 1 row affected (0.01 sec)
+mysql> select * from player2;
++--------+------+-------+
+| name   | age  | score |
++--------+------+-------+
+| Ram    |   28 |   125 |
+| Charan |   25 |   173 |
+| Ravan  |   20 |   152 |
++--------+------+-------+
+3 rows in set (0.08 sec)
+
+
+3.SQL QUERY TO BRING THE EXPECTED OUTPUT AND TO FOLLOW-UP THE REMAINING PROGRAM
+
+mysql> insert into player2 values('Suresh',21,9),('Shyam',32,150),('David',28,170);
+Query OK, 3 rows affected (0.04 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+mysql> select * from player2;
++--------+------+-------+
+| name   | age  | score |
++--------+------+-------+
+| Ram    |   28 |   125 |
+| Charan |   25 |   173 |
+| Ravan  |   20 |   152 |
+| Suresh |   21 |     9 |
+| Shyam  |   32 |   150 |
+| David  |   28 |   170 |
++--------+------+-------+
+6 rows in set (0.00 sec)
+
+mysql> delete from player2 where name='charan';
+Query OK, 1 row affected (0.04 sec)
+mysql> select * from player2;
++--------+------+-------+
+| name   | age  | score |
++--------+------+-------+
+| Ram    |   28 |   125 |
+| Ravan  |   20 |   152 |
+| Suresh |   21 |     9 |
+| Shyam  |   32 |   150 |
+| David  |   28 |   170 |
++--------+------+-------+
+5 rows in set (0.00 sec)
+
+mysql> delete from player2 where name='Ravan';
+Query OK, 1 row affected (0.04 sec)
+mysql> select * from player2;
++--------+------+-------+
+| name   | age  | score |
++--------+------+-------+
+| Ram    |   28 |   125 |
+| Suresh |   21 |     9 |
+| Shyam  |   32 |   150 |
+| David  |   28 |   170 |
++--------+------+-------+
+4 rows in set (0.00 sec)
+
+
+4.TO UPDATE THE AGE OF SHYAM IN THE PLAYER TABLE
+ 
+mysql> update player2 set age=30 where name='Shyam';
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+
+5.DELETE PLAYER “DAVID” FROM THE PLAYER TABLE
+ 
+mysql> delete from player2 where name='David';
+Query OK, 1 row affected (0.04 sec)
+mysql> select * from player2;
++--------+------+-------+
+| name   | age  | score |
++--------+------+-------+
+| Ram    |   28 |   125 |
+| Suresh |   21 |     9 |
+| Shyam  |   30 |   150 |
++--------+------+-------+
+3 rows in set (0.00 sec)
+
+
+6.TO STORE THE STRIKE_RATE OF THE PLAYERS IN THE DATABASE
+ 
+mysql> alter table player2 add strike_rate float;
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+mysql> select * from player2;
++--------+------+-------+-------------+
+| name   | age  | score | strike_rate |
++--------+------+-------+-------------+
+| Ram    |   28 |   125 |        NULL |
+| Suresh |   21 |     9 |        NULL |
+| Shyam  |   30 |   150 |        NULL |
++--------+------+-------+-------------+
+3 rows in set (0.00 sec)
+
+
+7.TO GET THE NAME AND AGE OF ALL PLAYERS IN THE DATABASE
+ 
+mysql> select name,age from player2;
++--------+------+
+| name   | age  |
++--------+------+
+| Ram    |   28 |
+| Suresh |   21 |
+| Shyam  |   30 |
++--------+------+
+3 rows in set (0.00 sec)
+
+
+8.SQL QUERY TO RENAME THE COLUMN TO FULL_NAME IN THE PLAYER TABLE
+
+mysql> alter table player2 change name full_name varchar(25);
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+mysql> select * from player2;
++-----------+------+-------+-------------+
+| full_name | age  | score | strike_rate |
++-----------+------+-------+-------------+
+| Ram       |   28 |   125 |        NULL |
+| Suresh    |   21 |     9 |        NULL |
+| Shyam     |   30 |   150 |        NULL |
++-----------+------+-------+-------------+
+3 rows in set (0.00 sec)
+
+
+9.SQL QUERY TO DELETE THE PLAYER TABLE
+
+mysql> drop table player2;
+Query OK, 0 rows affected (0.05 sec)
+mysql> show tables;
+Empty set (0.04 sec)
+mysql> select * from player2;
+ERROR 1146 (42S02): Table 'codingassignment2.cplayer' doesn't exist
+

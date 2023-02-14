@@ -1,0 +1,201 @@
+mysql> create database ecommerce;
+Query OK, 1 row affected (0.09 sec)
+mysql> use ecommerce;
+Database changed
+
+mysql> create table amazon(Name varchar(26), Category char(21), Price int, Brand char(26), Ratings float(5,1));
+Query OK, 0 rows affected, 1 warning (0.17 sec)
+mysql> desc amazon;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| Name     | varchar(26) | YES  |     | NULL    |       |
+| Category | char(21)    | YES  |     | NULL    |       |
+| Price    | int         | YES  |     | NULL    |       |
+| Brand    | char(26)    | YES  |     | NULL    |       |
+| Ratings  | float(1,1)  | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> insert into amazon values('Kurti','Clothing',600,'Max',4.8),('TrackPants','Clothing',1200,'Puma',4.6),('Hoodies','Clothing',880,'Puma',4.9),('T-shirt','Clothing',1580,'Puma',4.6),('BlueJeans','Clothing',1700,'Spykar',4.4),('BlackJeans','Clothing',1700,'Wrangler',4.4),('GreyJeans','Clothing',1700,'Levis',4.2),('BourbonSmall','Cookies',30,'Bourbon',4.2),('BourbonXtra','Cookies',120,'Bourbon',4.2),('DarkFantasy','Cookies',30,'Bourbon',4.2),('PotatoChips','Fries',35,'Chips',4.8),('CornChips','Fries',50,'Chips',4.4),('BananaChips','Fries',80,'Chips',4.2),('CBZ Series','Vehicle',886213,'Hero',4.1),('Glamour','Vehicle',868312,'Hero',4.2),('Redmi 8i','Gadgets',17800,'Redmi',4.4),('Redmi 7i','Gadgets',16100,'Redmi',4.4),('Redmi 5A','Gadgets',7500,'Redmi',3.7),('OnePlus 8T','Gadgets',44000,'OnePlus',4.4),('JeanTops','Clothing',800,'Denim',4.2),('JeanShirts','Clothing',1200,'Puma',4.2),('Coats','Clothing',3000,'Nike',4.0),('Pants','Clothing',1500,'Nike',4.8),('WonderlaCake','Bakery',30,'Britannia',4.2),('VannilaCakeFills','Bakery',30,'Britannia',4.4);
+Query OK, 25 rows affected (0.08 sec)
+Records: 25  Duplicates: 0  Warnings: 0
+
+mysql> select * from amazon;
++------------------+----------+--------+-----------+---------+
+| Name             | Category | Price  | Brand     | Ratings |
++------------------+----------+--------+-----------+---------+
+| Kurti            | Clothing |    600 | Max       |     4.8 |
+| TrackPants       | Clothing |   1200 | Puma      |     4.6 |
+| Hoodies          | Clothing |   880  |  Puma     |     4.9 |
+| T-shirt          | Clothing |   1580 | Puma      |     4.6 |
+| BlueJeans        | Clothing |   1700 | Spykar    |     4.4 |
+| BlackJeans       | Clothing |   1700 | Wrangler  |     4.4 |
+| GreyJeans        | Clothing |   1700 | Levis     |     4.2 |
+| BourbonSmall     | Cookies  |     30 | Bourbon   |     4.2 |
+| BourbonXtra      | Cookies  |    120 | Bourbon   |     4.2 |
+| DarkFantasy      | Cookies  |     30 | Bourbon   |     4.2 |
+| PotatoChips      | Fries    |     35 | Chips     |     4.8 |
+| CornChips        | Fries    |     50 | Chips     |     4.4 |
+| BananaChips      | Fries    |     80 | Chips     |     4.2 |
+| CBZ Series       | Vehicle  | 886213 | Hero      |     4.1 |
+| Glamour          | Vehicle  | 868312 | Hero      |     4.2 |
+| Redmi 8i         | Gadgets  |  17800 | Redmi     |     4.4 |
+| Redmi 7i         | Gadgets  |  16100 | Redmi     |     4.4 |
+| Redmi 5A         | Gadgets  |   7500 | Redmi     |     3.7 |
+| OnePlus 8T       | Gadgets  |  44000 | OnePlus   |     4.4 |
+| JeanTops         | Clothing |    800 | Denim     |     4.2 |
+| JeanShirts       | Clothing |   1200 | Puma      |     4.2 |
+| Coats            | Clothing |   3000 | Nike      |     4.0 |
+| Pants            | Clothing |   1500 | Nike      |     4.8 |
+| WonderlaCake     | Bakery   |     30 | Britannia |     4.2 |
+| VannilaCakeFills | Bakery   |     30 | Britannia |     4.4 |
++------------------+----------+--------+-----------+---------+
+25 rows in set (0.01 sec)
+
+
+
+1. SQL QUERY TO GET THE DETAILS OF PRODUCTS THAT BELONG TO “CLOTHING” CATEGORY AND PRICE LESS THAN 700.
+
+mysql> select * from amazon where Category='Clothing' and price<700;
++-------+----------+-------+-------+---------+
+| Name  | Category | Price | Brand | Ratings |
++-------+----------+-------+-------+---------+
+| Kurti | Clothing |   600 | Max   |     4.8 |
++-------+----------+-------+-------+---------+
+1 row in set (0.07 sec)
+
+
+2.SQL QUERY TO GET THE PRODUCTS THAT BELONG TO “DENIM” AND RATING GREATER THAN 4.
+
+mysql> select * from amazon where Brand='Denim' and Rating>4.0;
++----------+----------+-------+-------+---------+
+| Name     | Category | Price | Brand | Ratings |
++----------+----------+-------+-------+---------+
+| JeanTops | Clothing |   800 | Denim |     4.2 |
++----------+----------+-------+-------+---------+
+1 row in set (0.02 sec)
+
+
+3. SQL QUERY WHERE PRICE LESS THAN OR EQUAL TO 1000 AND RATING GREATER THAN 4.0 AS THE BEST RATED PRODUCTS:
+
+mysql> select * from amazon where Price<=1000 and Ratings>4.0;
+mysql> select * from amazon where Price<=1000 and Ratings>4.0;
++------------------+----------+-------+-----------+---------+
+| Name             | Category | Price | Brand     | Ratings |
++------------------+----------+-------+-----------+---------+
+| Kurti            | Clothing |   600 | Max       |     4.8 |
+| BourbonSmall     | Cookies  |    30 | Bourbon   |     4.2 |
+| BourbonXtra      | Cookies  |   120 | Bourbon   |     4.2 |
+| DarkFantasy      | Cookies  |    30 | Bourbon   |     4.2 |
+| PotatoChips      | Fries    |    35 | Chips     |     4.8 |
+| CornChips        | Fries    |    50 | Chips     |     4.4 |
+| BananaChips      | Fries    |    80 | Chips     |     4.2 |
+| JeanTops         | Clothing |   800 | Denim     |     4.2 |
+| WonderlaCake     | Bakery   |    30 | Britannia |     4.2 |
+| VannilaCakeFills | Bakery   |    30 | Britannia |     4.4 |
++------------------+----------+-------+-----------+---------+
+10 rows in set (0.00 sec)
+
+
+4. SQL QUERY TO GET RATING GREATER THAN 3.6 AND PRICE LESS THAN 1000 AND BELONGS TO PUMA BRAND:
+
+mysql> select * from amazon where Price<=1000 and Ratings>3.6 and Brand='Puma';
++-------+----------+-------+-------+---------+
+| Name  | Category | Price | Brand | Ratings |
++-------+----------+-------+-------+---------+
+| Hoodies| Clothing| 880   | Puma  |     4.9 |
++-------+----------+-------+-------+---------+
+1 row in set (0.07 sec)
+
+
+5. SQL QUERY TO GET ALL THE PRODUCTS FROM “PUMA”,”DENIM” OR “NIKE”:
+
+mysql> select * from amazon where Brand in('Puma','Denim','Nike');
++------------+----------+-------+-------+---------+
+| Name       | Category | Price | Brand | Ratings |
++------------+----------+-------+-------+---------+
+| TrackPants | Clothing |  1200 | Puma  |     4.6 |
+| Hoodies    | Clothing |  1500 | Puma  |     4.9 |
+| T-shirt    | Clothing |  1580 | Puma  |     4.6 |
+| JeanTops   | Clothing |   800 | Denim |     4.2 |
+| JeanShirts | Clothing |  1200 | Puma  |     4.2 |
+| Coats      | Clothing |  3000 | Nike  |     4.0 |
+| Pants      | Clothing |  1500 | Nike  |     4.8 |
++------------+----------+-------+-------+---------+
+7 rows in set (0.01 sec)
+
+
+6. SQL QUERY TO GET THE BRAND “REDMI” WITH RATING GREATER THAN 4 OR PRODUCTS THAT BELONG TO “ONEPLUS” BRAND:
+
+mysql> select * from amazon where Brand='Redmi' and Ratings>4.0 or Brand='OnePlus';
++------------+----------+-------+---------+---------+
+| Name       | Category | Price | Brand   | Ratings |
++------------+----------+-------+---------+---------+
+| Redmi 8i   | Gadgets  | 17800 | Redmi   |     4.4 |
+| Redmi 7i   | Gadgets  | 16100 | Redmi   |     4.4 |
+| OnePlus 8T | Gadgets  | 44000 | OnePlus |     4.4 |
++------------+----------+-------+---------+---------+
+3 rows in set (0.12 sec)
+
+
+7. SQL QUERY TO GET CAKES FROM “CADBURY ” AND “BRITANNIA” HAVING GREATER THAN 4.0:
+
+mysql> select * from amazon where name like '%cake';
++--------------+----------+-------+-----------+---------+
+| Name         | Category | Price | Brand     | Ratings |
++--------------+----------+-------+-----------+---------+
+| WonderlaCake | Bakery   |    30 | Britannia |     4.2 |
++--------------+----------+-------+-----------+---------+
+1 row in set (0.00 sec)
+
+
+SQL QUERY TO GET PRODUCTS THAT HAVE “CAKE” IN NAME AS CAKES:
+
+mysql> select Name as Cakes from amazon where Name like '%cake';
++--------------+
+| Cakes        |
++--------------+
+| WonderlaCake |
++--------------+
+1 row in set (0.02 sec)
+
+
+8. SQL QUERY TO GET DETAILS OF BRAND “PUMA” AND RATING GREATER THAN 3.5 OR BRAND “DENIM” RATING GREATER THAN 4.0:
+
+mysql> select * from amazon where brand='Puma' and Ratings>3.5 or brand='Denim' and Ratings<4.0;
+
++------------+----------+-------+-------+---------+
+| Name       | Category | Price | Brand | Ratings |
++------------+----------+-------+-------+---------+
+| TrackPants | Clothing |  1200 | Puma  |     4.6 |
+| Hoodies    | Clothing |  1500 | Puma  |     4.9 |
+| T-shirt    | Clothing |  1580 | Puma  |     4.6 |
+| JeanShirts | Clothing |  1200 | Puma  |     4.2 |
++------------+----------+-------+-------+---------+
+4 rows in set (0.04 sec)
+
+
+9. SQL QUERY TO GET ALL SHIRTS IN “PUMA”, “NIKE” OR “LEVIS” EXCLUDING THE BLACK COLOR SHIRT:
+
+mysql> select * from amazon where brand in('Puma','Nike','Levis') and name not like 'Black%';
++------------+----------+-------+-------+---------+
+| Name       | Category | Price | Brand | Ratings |
++------------+----------+-------+-------+---------+
+| TrackPants | Clothing |  1200 | Puma  |     4.6 |
+| Hoodies    | Clothing |  1500 | Puma  |     4.9 |
+| T-shirt    | Clothing |  1580 | Puma  |     4.6 |
+| GreyJeans  | Clothing |  1700 | Levis |     4.2 |
+| JeanShirts | Clothing |  1200 | Puma  |     4.2 |
+| Coats      | Clothing |  3000 | Nike  |     4.0 |
+| Pants      | Clothing |  1500 | Nike  |     4.8 |
++------------+----------+-------+-------+---------+
+7 rows in set (0.01 sec)
+
+
+
+
+
+
+
+

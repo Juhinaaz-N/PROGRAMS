@@ -1,0 +1,315 @@
+mysql> create database employee_details;
+Query OK, 1 row affected (0.14 sec)
+
+mysql> use employee_details;
+Database changed
+mysql> create table employees(Name varchar(23),Emp_ID int, DOJ date,Dept_ID int,Dept Varchar(21),Salary float(10,2));
+Query OK, 0 rows affected, 1 warning (0.16 sec)
+
+mysql> desc employees;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| Name    | varchar(23) | YES  |     | NULL    |       |
+| Emp_ID  | int         | YES  |     | NULL    |       |
+| DOJ     | date        | YES  |     | NULL    |       |
+| Dept_ID | int         | YES  |     | NULL    |       |
+| Dept    | varchar(21) | YES  |     | NULL    |       |
+| Salary  | float(10,2) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+6 rows in set (0.01 sec)
+
+
+mysql>  insert into employees values('Ryan',1616,'2023-12-23',10,'Clerk',15000),('Surendar',1717,'2023-10-23',10,'Clerk',15000),('Lala',8158,'2020-08-15',30,'Analyst',21000),('Arjun',6262,'2022-06-11',15,'Salesman',17000),('Sri',8689,'1789-06-30',20,'TechnicalDesigning',26000),('Juhi',8986,'1786-08-08',21,'Manager',35000),('Jahara',1588,'2023-08-15',20,'TechnicalStaff',28000);
+Query OK, 7 rows affected (0.10 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+mysql> select * from employees;
++----------+--------+------------+---------+--------------------+----------+
+| Name     | Emp_ID | DOJ        | Dept_ID | Dept               | Salary   |
++----------+--------+------------+---------+--------------------+----------+ |
+| Ryan     |   1616 | 2023-12-23 |      10 | Clerk              | 15000.00 |
+| Surendar |   1717 | 2023-05-23 |      10 | Clerk              | 15000.00 |
+| Lala     |   8158 | 2020-08-15 |      30 | Analyst            | 21000.00 |
+| Arjun    |   6262 | 2022-06-11 |      15 | Salesman           | 17000.00 |
+| Sri      |   8689 | 1789-06-30 |      20 | TechnicalDesigning | 26000.00 |
+| Juhi     |   8986 | 1786-08-08 |      21 | Manager            | 35000.00 |
+| Jahara   |   1588 | 2023-08-15 |      20 | TechnicalStaff     | 28000.00 |
++----------+--------+------------+---------+--------------------+----------+
+7 rows in set (0.01 sec)
+
+
+
+11. Display the list of employees who have joined the company before 30th june 80 or after 31st dec 80
+
+mysql> select * from employees where DOJ between '2019-06-30' and '2023-06-30';
++-------+--------+------------+---------+----------+----------+
+| Name  | Emp_ID | DOJ        | Dept_ID | Dept     | Salary   |
++-------+--------+------------+---------+----------+----------+
+| Lala  |   8158 | 2020-08-15 |      30 | Analyst  | 21000.00 |
+| Arjun |   6262 | 2022-06-11 |      15 | Salesman | 17000.00 |
++-------+--------+------------+---------+----------+----------+
+2 rows in set (0.01 sec)
+
+
+12.Display the name of the current user
+
+mysql> select current_user;
++----------------+
+| current_user   |
++----------------+
+| root@localhost |
++----------------+
+1 row in set (0.02 sec)
+
+
+13.Display the names of employees working in department number 10 or 20 and working as clerks , salesman or analyst
+
+mysql> select Name from employees where Dept_Id=10 or Dept_Id=20 and Dept='Clerk' or Dept='Sales' or Dept='Analyst';
++----------+
+| Name     |
++----------+
+| Ryan     |
+| Surendar |
+| Lala     |   |
++----------+
+3 rows in set (0.00 sec)
+
+
+14.Display the names of employees whose name starts with alphabet “S”
+
+mysql> select Name from employees where Name like 'S%';
++----------+
+| Name     |
++----------+     |
+| Surendar |
+| Sri      |
++----------+
+2 rows in set (0.00 sec)
+
+
+15.Display employee name from employees whose name ends with alphabet N
+
+mysql> select Name from employees where Name like '%N';
++-------+
+| Name  |
++-------+
+| Ryan  |
+| Arjun |
++-------+
+2 rows in set (0.00 sec)
+
+
+16.Display the names of employees whose names have second alphabet A in their names
+
+mysql> select Name from employees where Name like '_a%';
++--------+
+| Name   |
++--------+
+| Lala   |
+| Jahara |
++--------+
+2 rows in set (0.00 sec)
+
+
+17.Display the names of all tables from the current user
+
+mysql> show tables;
++----------------------------+
+| Tables_in_employee_details |
++----------------------------+
+| employees                  |
++----------------------------+
+1 row in set (0.00 sec)
+
+
+18.Display the unique jobs in emp table
+
+mysql> select distinct Dept from employees;
++--------------------+
+| Dept               |
++--------------------+
+| TechnicalDesigning |
+| Clerk              |
+| Analyst            |
+| Salesman           |
+| Manager            |
+| TechnicalStaff     |
++--------------------+
+6 rows in set (0.00 sec)
+
+
+19.Display the names of employees who are not working as SALESMAN or CLERK or ANALYST
+
+mysql> select Name from employees where Dept not in('Salesman','Clerk','Analyst');
++--------+
+| Name   |
++--------+
+| Sri    |
+| Juhi   |
+| Jahara |
++--------+
+3 rows in set (0.12 sec)
+
+
+20.Display the names and salary of employees in descending order of salary.
+
+mysql> select Name,Salary from employees order by Salary desc;
+mysql> select Name,Salary from employees order by Salary desc;
++----------+----------+
+| Name     | Salary   |
++----------+----------+
+| Juhi     | 35000.00 |
+| Jahara   | 28000.00 |
+| Sri      | 26000.00 |
+| Lala     | 21000.00 |
+| Arjun    | 17000.00 |
+| Ryan     | 15000.00 |
+| Surendar | 15000.00 |
++----------+----------+
+7 rows in set (0.00 sec)
+
+
+21.Display the names,job,salary and increased by 15% labbel the column new salary.
+
+mysql> select Name,Dept,salary,Salary*0.15+Salary as NewSalary from employees;
++----------+--------------------+----------+-----------+
+| Name     | Dept               | salary   | NewSalary |
++----------+--------------------+----------+-----------+
+| Ryan     | Clerk              | 15000.00 |  17250.00 |
+| Surendar | Clerk              | 15000.00 |  17250.00 |
+| Lala     | Analyst            | 21000.00 |  24150.00 |
+| Arjun    | Salesman           | 17000.00 |  19550.00 |
+| Sri      | TechnicalDesigning | 26000.00 |  29900.00 |
+| Juhi     | Manager            | 35000.00 |  40250.00 |
+| Jahara   | TechnicalStaff     | 28000.00 |  32200.00 |
++----------+--------------------+----------+-----------+
+7 rows in set (0.03 sec)
+
+
+22.Display the name of the employees whose name contains 'LL'.
+
+mysql> select Name from employees where Name like '%l_l_';
++------+
+| Name |
++------+
+| Lala |
++------+
+1 row in set (0.00 sec)
+
+
+23.Display the name of the employees whose name contain 'A' as 4th character.
+
+mysql> select Name from employees where Name like '___a%';
++--------+
+| Name   |
++--------+
+| Lala   |
+| Jahara |
++--------+
+2 rows in set (0.00 sec)
+
+
+25.Display the name,job and salary of the employees whose salary is not in the range of 2000 and 3000.
+
+mysql> select Name,Dept,Salary from employees where Salary not between 2000 and 3000;
++----------+--------------------+----------+
+| Name     | Dept               | Salary   |
++----------+--------------------+----------+
+| Ryan     | Clerk              | 15000.00 |
+| Surendar | Clerk              | 15000.00 |
+| Lala     | Analyst            | 21000.00 |
+| Arjun    | Salesman           | 17000.00 |
+| Sri      | TechnicalDesigning | 26000.00 |
+| Juhi     | Manager            | 35000.00 |
+| Jahara   | TechnicalStaff     | 28000.00 |
++----------+--------------------+----------+
+7 rows in set (0.00 sec)
+
+
+26. Diplay the empno,job and hiredate of the employees who don't have MANAGER.
+
+mysql> select Emp_ID,Dept,DOJ from employees where Dept not in('Manager');
++--------+--------------------+------------+
+| Emp_ID | Dept               | DOJ        |
++--------+--------------------+------------+
+|   1616 | Clerk              | 2023-12-23 |
+|   1717 | Clerk              | 2023-10-23 |
+|   8158 | Analyst            | 2020-08-15 |
+|   6262 | Salesman           | 2022-06-11 |
+|   8689 | TechnicalDesigning | 1789-06-30 |
+|   1588 | TechnicalStaff     | 2023-08-15 |
++--------+--------------------+------------+
+6 rows in set (0.00 sec)
+
+
+27. Display the name and hiredate of the employees who have joined in the year '81'.
+
+mysql> select Name,DOJ from employees where Dept='TechnicalDesigning';
++------+------------+
+| Name | DOJ        |
++------+------------+
+| Sri  | 1789-06-30 |
++------+------------+
+1 rows in set (0.00 sec)
+
+
+28. Display the name and hiredate of the employees first half of year in '81'.
+
+mysql> select Name,DOJ from employees where DOJ between '1783-01-02' and '1921-06-30';
++------+------------+
+| Name | DOJ        |
++------+------------+
+| Sri  | 1789-06-30 |
+| Juhi | 1786-08-08 |
++------+------------+
+2 rows in set (0.00 sec)
+
+
+29. Display the following output-ename earns sal but wants three times salary
+
+mysql> select Name,Salary,Salary*3 as Expected_Salary from employees;
++----------+----------+-----------------+
+| Name     | Salary   | Expected_Salary |
++----------+----------+-----------------+
+| Ryan     | 15000.00 |        45000.00 |
+| Surendar | 15000.00 |        45000.00 |
+| Lala     | 21000.00 |        63000.00 |
+| Arjun    | 17000.00 |        51000.00 |
+| Sri      | 26000.00 |        78000.00 |
+| Juhi     | 35000.00 |       105000.00 |
+| Jahara   | 28000.00 |        84000.00 |
++----------+----------+-----------------+
+7 rows in set (0.00 sec)
+
+
+30. Display the details of the employees who have joined in the month of 'MAY'
+
+mysql> select * from employees where DOJ between '2022-05-01' and '2023-05-31';
++----------+--------+------------+---------+--------------------+----------+
+| Name     | Emp_ID | DOJ        | Dept_ID | Dept               | Salary   |
++----------+--------+------------+---------+--------------------+----------+ |
+| Surendar |   1717 | 2023-05-23 |      10 | Clerk              | 15000.00 |
++----------+--------+------------+---------+--------------------+----------+
+1 rows in set (0.02 sec)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

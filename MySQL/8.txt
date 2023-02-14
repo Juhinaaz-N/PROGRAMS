@@ -1,0 +1,118 @@
+mysql> use employee_details;
+Database changed
+
+mysql> select * from employees;
++-------------+--------+------------+---------+--------------------+----------+------------------+
+| Name        | Emp_ID | DOJ        | Dept_ID | Dept               | Salary   | TotalCommissions |
++-------------+--------+------------+---------+--------------------+----------+------------------+
+| Ryan        |   1616 | 2023-12-23 |      10 | Clerk              | 15000.00 |           300.00 |
+| Surendar    |   1717 | 2023-10-23 |      10 | Clerk              | 15000.00 |           300.00 |
+| Lala        |   8158 | 2020-08-15 |      30 | Analyst            | 21000.00 |           420.00 |
+| Arjun       |   6262 | 2022-06-11 |      15 | Salesman           | 17000.00 |           340.00 |
+| Juhi        |   8986 | 1786-08-08 |      21 | Manager            | 35000.00 |           700.00 |
+| Jahara      |   1588 | 2023-08-15 |      10 | TechnicalStaff     | 28000.00 |           560.00 |
+| Sri         |   8815 | 2019-09-03 |      17 | TechnicalDesigning | 26000.00 |           480.00 |
+| Vishnu      |   8689 | 1789-06-09 |      21 | Manager            | 35000.00 |           700.00 |
+| Subramanian |   4100 | 2018-08-15 |      24 | Accounts           | 25000.00 |           420.00 |
++-------------+--------+------------+---------+--------------------+----------+------------------+
+9 rows in set (0.00 sec)
+
+
+SUB-QUERIES
+
+1.Display the name of employee who earn Highest Salary
+
+mysql> select Name,Salary from employees where Salary=(select max(Salary) from employees);
++--------+----------+
+| Name   | Salary   |
++--------+----------+
+| Juhi   | 35000.00 |
+| Vishnu | 35000.00 |
++--------+----------+
+2 rows in set (0.03 sec)
+
+
+
+2.Display the name,job and hiredate of senior most employee
+
+mysql> select Name,Dept,DOJ from employees where DOJ=(select min(DOJ) from employees);
++------+---------+------------+
+| Name | Dept    | DOJ        |
++------+---------+------------+
+| Juhi | Manager | 1786-08-08 |
++------+---------+------------+
+1 row in set (0.00 sec)
+
+
+
+3.Display the employee Number,name,job and salary for employee working as clerk and earning highest salary among the clerks
+
+mysql> select Emp_ID,Name,Dept,Salary from employees where Dept='Clerk' and Salary=(select max(Salary) from employees where Dept='Clerk');
++--------+----------+-------+----------+
+| Emp_ID | Name     | Dept  | Salary   |
++--------+----------+-------+----------+
+|   1616 | Ryan     | Clerk | 15000.00 |
+|   1717 | Surendar | Clerk | 15000.00 |
++--------+----------+-------+----------+
+2 rows in set (0.00 sec)
+
+
+
+4.Display the name and salary of salesman who earns a salary more than the Highest Salary of the clerk
+
+mysql> select Emp_ID,Name,Dept,Salary from employees where Dept='Salesman' and Salary>(select max(Salary) from employees where Dept='Clerk');
++--------+-------+----------+----------+
+| Emp_ID | Name  | Dept     | Salary   |
++--------+-------+----------+----------+
+|   6262 | Arjun | Salesman | 17000.00 |
++--------+-------+----------+----------+
+1 row in set (0.00 sec)
+
+
+
+5.Display the names,salary and deptno of employees who earn Highest salary in their respective departments
+
+mysql> select Name,Salary,Dept_ID from employees where Salary in(select max(Salary) from employees group by Dept_ID);
++--------+----------+---------+
+| Name   | Salary   | Dept_ID |
++--------+----------+---------+
+| Lala   | 21000.00 |      30 |
+| Arjun  | 17000.00 |      15 |
+| Juhi   | 35000.00 |      21 |
+| Jahara | 28000.00 |      10 |
+| Sri    | 26000.00 |      17 |
+| Vishnu | 35000.00 |      21 |
++--------+----------+---------+
+6 rows in set (0.00 sec)
+
+
+
+6.Display the details of the employees who are working in Accounting department
+
+mysql> select * from employees where Dept='Accounts';
++-------------+--------+------------+---------+----------+----------+------------------+
+| Name        | Emp_ID | DOJ        | Dept_ID | Dept     | Salary   | TotalCommissions |
++-------------+--------+------------+---------+----------+----------+------------------+
+| Subramanian |   4100 | 2018-08-15 |      24 | Accounts | 25000.00 |           420.00 |
++-------------+--------+------------+---------+----------+----------+------------------+
+1 row in set (0.00 sec)
+
+
+
+CONSTRAINTS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

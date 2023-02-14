@@ -1,0 +1,206 @@
+{\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset0 Courier New;}}
+{\*\generator Riched20 10.0.18362}\viewkind4\uc1 
+\pard\f0\fs22\lang1033 mysql> create database teachers_info;\par
+Query OK, 1 row affected (0.10 sec)\par
+\par
+mysql> use teachers_info;\par
+Database changed\par
+\par
+\par
+\b\fs32 Q1 . Create a table with suitable constraints and fill the table with following dataset.\par
+\b0\fs22\par
+mysql> create table teachers(S_No int unique key, Name varchar(21), Gender char(8), Dept varchar(23), DOJ date, Salary float(10,2));\par
+Query OK, 0 rows affected, 1 warning (0.15 sec)\par
+\par
+\fs24 mysql> desc teachers;\par
++--------+-------------+------+-----+---------+-------+\par
+| Field  | Type        | Null | Key | Default | Extra |\par
++--------+-------------+------+-----+---------+-------+\par
+| S_No   | int         | YES  | UNI | NULL    |       |\par
+| Name   | varchar(21) | YES  |     | NULL    |       |\par
+| Gender | char(8)     | YES  |     | NULL    |       |\par
+| Dept   | varchar(23) | YES  |     | NULL    |       |\par
+| DOJ    | date        | YES  |     | NULL    |       |\par
+| Salary | float(10,2) | YES  |     | NULL    |       |\par
++--------+-------------+------+-----+---------+-------+\par
+6 rows in set (0.00 sec)\par
+\fs22\par
+mysql> insert into teachers values(1,'Juhi','Female','Computer','2019-09-03',26000),(2,'Vishnu','Male','Computer','2019-08-23',26000),(3,'Jahara','Female','Computer','2016-08-15',30000),(4,'Nishath','Female','History','2021-02-03',21000),(5,'Surendar','Male','History','2022-01-02',17000),(6,'Uvasri','Female','History','2022-12-19',15000),(7,'Subramanian','Male','History','2023-01-02',9600);\par
+Query OK, 7 rows affected (0.08 sec)\par
+Records: 7  Duplicates: 0  Warnings: 0\par
+\par
+mysql> select * from teachers;\par
++------+-------------+--------+----------+------------+----------+\par
+| S_No | Name        | Gender | Dept     | DOJ        | Salary   |\par
++------+-------------+--------+----------+------------+----------+\par
+|    1 | Juhi        | Female | Computer | 2019-09-03 | 26000.00 |\par
+|    2 | Vishnu      | Male   | Computer | 2019-08-23 | 26000.00 |\par
+|    3 | Jahara      | Female | Computer | 2016-08-15 | 30000.00 |\par
+|    4 | Nishath     | Female | History  | 2021-02-03 | 21000.00 |\par
+|    5 | Surendar    | Male   | History  | 2022-01-02 | 17000.00 |\par
+|    6 | Uvasri      | Female | History  | 2022-12-19 | 15000.00 |\par
+|    7 | Subramanian | Male   | History  | 2023-01-02 |  9600.00 |\par
++------+-------------+--------+----------+------------+----------+\par
+7 rows in set (0.00 sec)\par
+\par
+\par
+\par
+\b\fs32 Q2. Write an SQL Query to select all the information of teachers in computer department\b0\fs22 .\par
+\par
+mysql> select * from teachers where Dept='Computer';\par
++------+--------+--------+----------+------------+----------+\par
+| S_No | Name   | Gender | Dept     | DOJ        | Salary   |\par
++------+--------+--------+----------+------------+----------+\par
+|    1 | Juhi   | Female | Computer | 2019-09-03 | 26000.00 |\par
+|    2 | Vishnu | Male   | Computer | 2019-08-23 | 26000.00 |\par
+|    3 | Jahara | Female | Computer | 2016-08-15 | 30000.00 |\par
++------+--------+--------+----------+------------+----------+\par
+3 rows in set (0.00 sec)\par
+\par
+\par
+\par
+\b\fs32 Q3. Write a query to list the name of female teachers in History department.\par
+\b0\fs22\par
+mysql> select * from teachers where Gender='Female' and Dept='History';\par
++------+---------+--------+---------+------------+----------+\par
+| S_No | Name    | Gender | Dept    | DOJ        | Salary   |\par
++------+---------+--------+---------+------------+----------+\par
+|    4 | Nishath | Female | History | 2021-02-03 | 21000.00 |\par
+|    6 | Uvasri  | Female | History | 2022-12-19 | 15000.00 |\par
++------+---------+--------+---------+------------+----------+\par
+2 rows in set (0.00 sec)\par
+\par
+\par
+\par
+\b\fs32 Q4. list all names of teachers with date of admission in ascending order\par
+\b0\fs22\par
+mysql> select Name,DOJ from teachers order by DOJ;\par
++-------------+------------+\par
+| Name        | DOJ        |\par
++-------------+------------+\par
+| Jahara      | 2016-08-15 |\par
+| Vishnu      | 2019-08-23 |\par
+| Juhi        | 2019-09-03 |\par
+| Nishath     | 2021-02-03 |\par
+| Surendar    | 2022-01-02 |\par
+| Uvasri      | 2022-12-19 |\par
+| Subramanian | 2023-01-02 |\par
++-------------+------------+\par
+7 rows in set (0.00 sec)\par
+\par
+\par
+\par
+\b\fs32 Q5. display Teachers name, Department, and Salary of male teacher.\par
+\b0\fs22\par
+mysql> select Name,Dept,Salary from teachers where Gender='Male';\par
++-------------+----------+----------+\par
+| Name        | Dept     | Salary   |\par
++-------------+----------+----------+\par
+| Vishnu      | Computer | 26000.00 |\par
+| Surendar    | History  | 17000.00 |\par
+| Subramanian | History  |  9600.00 |\par
++-------------+----------+----------+\par
+3 rows in set (0.00 sec)\par
+\par
+\par
+\par
+\b\fs32 Q6.To count the number of items whose salary is less than 10,000\par
+\b0\fs22\par
+mysql> select count(Name) from teachers where Salary<10000;\par
++-------------+\par
+| count(Name) |\par
++-------------+\par
+|           1 |\par
++-------------+\par
+1 row in set (0.00 sec)\par
+\par
+\b\fs32\par
+Q7.To insert a new record in the Teacher table with the following data: 8,\rdblquote Mersha\rdblquote ,\rdblquote computer\rdblquote ,\{1/1/2000\},12000,\rdblquote m\rdblquote\par
+\b0\fs22\par
+mysql> insert into teachers values(8,'Mersha','Male','Computer','2000-01-01',12000);\par
+Query OK, 1 row affected (0.08 sec)\par
+\par
+mysql> select * from teachers;\par
++------+-------------+--------+----------+------------+----------+\par
+| S_No | Name        | Gender | Dept     | DOJ        | Salary   |\par
++------+-------------+--------+----------+------------+----------+\par
+|    1 | Juhi        | Female | Computer | 2019-09-03 | 26000.00 |\par
+|    2 | Vishnu      | Male   | Computer | 2019-08-23 | 26000.00 |\par
+|    3 | Jahara      | Female | Computer | 2016-08-15 | 30000.00 |\par
+|    4 | Nishath     | Female | History  | 2021-02-03 | 21000.00 |\par
+|    5 | Surendar    | Male   | History  | 2022-01-02 | 17000.00 |\par
+|    6 | Uvasri      | Female | History  | 2022-12-19 | 15000.00 |\par
+|    7 | Subramanian | Male   | History  | 2023-01-02 |  9600.00 |\par
+|    8 | Mersha      | Male   | Computer | 2000-01-01 | 12000.00 |\par
++------+-------------+--------+----------+------------+----------+\par
+8 rows in set (0.00 sec)\par
+\par
+\par
+\par
+\b\fs32 Q8. List the teacher detail who is getting the minimum salary.\par
+\b0\fs22\par
+mysql> select * from teachers where Salary=(select min(Salary) from teachers);\par
++------+-------------+--------+---------+------------+---------+\par
+| S_No | Name        | Gender | Dept    | DOJ        | Salary  |\par
++------+-------------+--------+---------+------------+---------+\par
+|    7 | Subramanian | Male   | History | 2023-01-02 | 9600.00 |\par
++------+-------------+--------+---------+------------+---------+\par
+1 row in set (0.00 sec)\par
+\par
+\par
+\par
+\b\fs32 Q9.  List the teacher detail who is getting the second minimum salary.\par
+\b0\fs22\par
+mysql> select * from teachers where Salary=(select min(Salary) from teachers where Salary>10000);\par
++------+--------+--------+----------+------------+----------+\par
+| S_No | Name   | Gender | Dept     | DOJ        | Salary   |\par
++------+--------+--------+----------+------------+----------+\par
+|    8 | Mersha | Male   | Computer | 2000-01-01 | 12000.00 |\par
++------+--------+--------+----------+------------+----------+\par
+1 row in set (0.00 sec)\par
+\par
+\par
+\par
+\b\fs32 Q10. List down the average salary of the teachers belongs to History department  \par
+\b0\fs22\par
+mysql> select avg(Salary) from teachers where Dept='History';\par
++--------------+\par
+| avg(Salary)  |\par
++--------------+\par
+| 15650.000000 |\par
++--------------+\par
+1 row in set (0.00 sec)\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+}
+ 

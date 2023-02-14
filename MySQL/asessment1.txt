@@ -1,0 +1,198 @@
+mysql> create database teachers_info;
+Query OK, 1 row affected (0.10 sec)
+
+mysql> use teachers_info;
+Database changed
+
+
+Q1 . Create a table with suitable constraints and fill the table with following dataset.
+
+mysql> create table teachers(S_No int unique key, Name varchar(21), Gender char(8), Dept varchar(23), DOJ date, Salary float(10,2));
+Query OK, 0 rows affected, 1 warning (0.15 sec)
+mysql> desc teachers;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| S_No   | int         | YES  | UNI | NULL    |       |
+| Name   | varchar(21) | YES  |     | NULL    |       |
+| Gender | char(8)     | YES  |     | NULL    |       |
+| Dept   | varchar(23) | YES  |     | NULL    |       |
+| DOJ    | date        | YES  |     | NULL    |       |
+| Salary | float(10,2) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> insert into teachers values(1,'Juhi','Female','Computer','2019-09-03',26000),(2,'Vishnu','Male','Computer','2019-08-23',26000),(3,'Jahara','Female','Computer','2016-08-15',30000),(4,'Nishath','Female','History','2021-02-03',21000),(5,'Surendar','Male','History','2022-01-02',17000),(6,'Uvasri','Female','History','2022-12-19',15000),(7,'Subramanian','Male','History','2023-01-02',9600);
+Query OK, 7 rows affected (0.08 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+mysql> select * from teachers;
++------+-------------+--------+----------+------------+----------+
+| S_No | Name        | Gender | Dept     | DOJ        | Salary   |
++------+-------------+--------+----------+------------+----------+
+|    1 | Juhi        | Female | Computer | 2019-09-03 | 26000.00 |
+|    2 | Vishnu      | Male   | Computer | 2019-08-23 | 26000.00 |
+|    3 | Jahara      | Female | Computer | 2016-08-15 | 30000.00 |
+|    4 | Nishath     | Female | History  | 2021-02-03 | 21000.00 |
+|    5 | Surendar    | Male   | History  | 2022-01-02 | 17000.00 |
+|    6 | Uvasri      | Female | History  | 2022-12-19 | 15000.00 |
+|    7 | Subramanian | Male   | History  | 2023-01-02 |  9600.00 |
++------+-------------+--------+----------+------------+----------+
+7 rows in set (0.00 sec)
+
+
+
+Q2. Write an SQL Query to select all the information of teachers in computer department.
+
+mysql> select * from teachers where Dept='Computer';
++------+--------+--------+----------+------------+----------+
+| S_No | Name   | Gender | Dept     | DOJ        | Salary   |
++------+--------+--------+----------+------------+----------+
+|    1 | Juhi   | Female | Computer | 2019-09-03 | 26000.00 |
+|    2 | Vishnu | Male   | Computer | 2019-08-23 | 26000.00 |
+|    3 | Jahara | Female | Computer | 2016-08-15 | 30000.00 |
++------+--------+--------+----------+------------+----------+
+3 rows in set (0.00 sec)
+
+
+
+Q3. Write a query to list the name of female teachers in History department.
+
+mysql> select * from teachers where Gender='Female' and Dept='History';
++------+---------+--------+---------+------------+----------+
+| S_No | Name    | Gender | Dept    | DOJ        | Salary   |
++------+---------+--------+---------+------------+----------+
+|    4 | Nishath | Female | History | 2021-02-03 | 21000.00 |
+|    6 | Uvasri  | Female | History | 2022-12-19 | 15000.00 |
++------+---------+--------+---------+------------+----------+
+2 rows in set (0.00 sec)
+
+
+
+Q4. list all names of teachers with date of admission in ascending order
+
+mysql> select Name,DOJ from teachers order by DOJ;
++-------------+------------+
+| Name        | DOJ        |
++-------------+------------+
+| Jahara      | 2016-08-15 |
+| Vishnu      | 2019-08-23 |
+| Juhi        | 2019-09-03 |
+| Nishath     | 2021-02-03 |
+| Surendar    | 2022-01-02 |
+| Uvasri      | 2022-12-19 |
+| Subramanian | 2023-01-02 |
++-------------+------------+
+7 rows in set (0.00 sec)
+
+
+
+Q5. display Teacher’s name, Department, and Salary of male teacher.
+
+mysql> select Name,Dept,Salary from teachers where Gender='Male';
++-------------+----------+----------+
+| Name        | Dept     | Salary   |
++-------------+----------+----------+
+| Vishnu      | Computer | 26000.00 |
+| Surendar    | History  | 17000.00 |
+| Subramanian | History  |  9600.00 |
++-------------+----------+----------+
+3 rows in set (0.00 sec)
+
+
+
+Q6.To count the number of items whose salary is less than 10,000
+
+mysql> select count(Name) from teachers where Salary<10000;
++-------------+
+| count(Name) |
++-------------+
+|           1 |
++-------------+
+1 row in set (0.00 sec)
+
+
+Q7.To insert a new record in the Teacher table with the following data: 8,”Mersha”,”computer”,{1/1/2000},12000,”m”
+
+mysql> insert into teachers values(8,'Mersha','Male','Computer','2000-01-01',12000);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> select * from teachers;
++------+-------------+--------+----------+------------+----------+
+| S_No | Name        | Gender | Dept     | DOJ        | Salary   |
++------+-------------+--------+----------+------------+----------+
+|    1 | Juhi        | Female | Computer | 2019-09-03 | 26000.00 |
+|    2 | Vishnu      | Male   | Computer | 2019-08-23 | 26000.00 |
+|    3 | Jahara      | Female | Computer | 2016-08-15 | 30000.00 |
+|    4 | Nishath     | Female | History  | 2021-02-03 | 21000.00 |
+|    5 | Surendar    | Male   | History  | 2022-01-02 | 17000.00 |
+|    6 | Uvasri      | Female | History  | 2022-12-19 | 15000.00 |
+|    7 | Subramanian | Male   | History  | 2023-01-02 |  9600.00 |
+|    8 | Mersha      | Male   | Computer | 2000-01-01 | 12000.00 |
++------+-------------+--------+----------+------------+----------+
+8 rows in set (0.00 sec)
+
+
+Q8. List the teacher detail who is getting the minimum salary.
+
+mysql> select * from teachers where Salary=(select min(Salary) from teachers);
++------+-------------+--------+---------+------------+---------+
+| S_No | Name        | Gender | Dept    | DOJ        | Salary  |
++------+-------------+--------+---------+------------+---------+
+|    7 | Subramanian | Male   | History | 2023-01-02 | 9600.00 |
++------+-------------+--------+---------+------------+---------+
+1 row in set (0.00 sec)
+
+
+
+Q9.  List the teacher detail who is getting the second minimum salary.
+
+mysql> select * from teachers where Salary=(select min(Salary) from teachers where Salary>10000);
++------+--------+--------+----------+------------+----------+
+| S_No | Name   | Gender | Dept     | DOJ        | Salary   |
++------+--------+--------+----------+------------+----------+
+|    8 | Mersha | Male   | Computer | 2000-01-01 | 12000.00 |
++------+--------+--------+----------+------------+----------+
+1 row in set (0.00 sec)
+
+
+
+Q10. List down the average salary of the teachers belongs to History department  
+
+mysql> select avg(Salary) from teachers where Dept='History';
++--------------+
+| avg(Salary)  |
++--------------+
+| 15650.000000 |
++--------------+
+1 row in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,310 @@
+mysql> create database stu_prof;
+Query OK, 1 row affected (0.09 sec)
+
+mysql> use stu_prof;
+Database changed
+
+
+1) Create the following tables
+a) studentprofile(rollno,name,dob,department,city)
+
+mysql> create table stu_det(RollNo int, Name varchar(21), DOB date,Dept varchar(23), City char(19));
+Query OK, 0 rows affected (0.15 sec)
+mysql> desc stu_det;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| RollNo | int         | YES  |     | NULL    |       |
+| Name   | varchar(21) | YES  |     | NULL    |       |
+| DOB    | date        | YES  |     | NULL    |       |
+| Dept   | varchar(23) | YES  |     | NULL    |       |
+| City   | char(19)    | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> insert into stu_det values(86,'Juhi','1999-06-08','EEE','Thanjavur'),(89,'Sri','2001-09-08','EEE','Thanjavur'),(68,'Jahara','1970-08-15','Social','Thanjavur'),(75,'Santhiya','1999-03-16','BMI','Cbe'),(04,'Kalki','1999-12-14','EEE','Thanjavur');
+Query OK, 5 rows affected (0.00 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+mysql> select * from stu_det;
++--------+----------+------------+--------+-----------+
+| RollNo | Name     | DOB        | Dept   | City      |
++--------+----------+------------+--------+-----------+
+|     86 | Juhi     | 1999-06-08 | EEE    | Thanjavur |
+|     89 | Sri      | 2001-09-08 | EEE    | Thanjavur |
+|     68 | Jahara   | 1970-08-15 | Social | Thanjavur |
+|     75 | Santhiya | 1999-03-16 | BMI    | Cbe       |
+|     04 | Kalki    | 1999-12-14 | EEE    | Thanjavur |
++--------+----------+------------+--------+-----------+
+5 rows in set (0.00 sec)
+
+
+
+b) marks (rollno,name,mark1,mark2)
+
+mysql> create table marks(RollNo int, Name varchar(21), M1 int, M2 int);
+Query OK, 0 rows affected (0.08 sec)
+mysql> insert into marks values(86,'Juhi',80,60),(89,'Sri',60,80),(68,'Jahara',75,88),(75,'Santhiya',87,66),(04,'Kalki',70,57);
+Query OK, 5 rows affected (0.03 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+mysql> select * from marks;
++--------+----------+------+------+
+| RollNo | Name     | M1   | M2   |
++--------+----------+------+------+
+|     86 | Juhi     |   80 |   60 |
+|     89 | Sri      |   60 |   80 |
+|     68 | Jahara   |   75 |   88 |
+|     75 | Santhiya |   87 |   66 |
+|     04 | Kalki    |   70 |   57 |
++--------+----------+------+------+
+5 rows in set (0.00 sec)
+
+
+3) add a column total to marks table.
+
+mysql> alter table marks add TotalMarks int;
+Query OK, 0 rows affected (0.14 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+4) change the column name dob to dateofbirth.
+
+mysql> alter table stu_det change DOB DateOfBirth date;
+Query OK, 0 rows affected (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+
+5) display the structure of the above tables.
+
+mysql> desc stu_det;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| RollNo      | int         | YES  |     | NULL    |       |
+| Name        | varchar(21) | YES  |     | NULL    |       |
+| DateOfBirth | date        | YES  |     | NULL    |       |
+| Dept        | varchar(23) | YES  |     | NULL    |       |
+| City        | char(19)    | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> desc marks;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| RollNo     | int         | YES  |     | NULL    |       |
+| Name       | varchar(21) | YES  |     | NULL    |       |
+| M1         | int         | YES  |     | NULL    |       |
+| M2         | int         | YES  |     | NULL    |       |
+| TotalMarks | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+
+
+6) List the tables which you have created.
+
+mysql> select * from stu_det;
++--------+----------+-------------+--------+-----------+
+| RollNo | Name     | DateOfBirth | Dept   | City      |
++--------+----------+-------------+--------+-----------+
+|     86 | Juhi     | 1999-06-08  | EEE    | Thanjavur |
+|     89 | Sri      | 2001-09-08  | EEE    | Thanjavur |
+|     68 | Jahara   | 1970-08-15  | Social | Thanjavur |
+|     75 | Santhiya | 1999-03-16  | BMI    | CBE       |
+|     04 | Kalki    | 1999-12-14  | EEE    | Thanjavur |
++--------+----------+-------------+--------+-----------+
+5 rows in set (0.00 sec)
+
+
+mysql> select * from marks;
++--------+----------+------+------+------------+
+| RollNo | Name     | M1   | M2   | TotalMarks |
++--------+----------+------+------+------------+
+|     86 | Juhi     |   80 |   60 |       NULL |
+|     89 | Sri      |   60 |   80 |       NULL |
+|     68 | Jahara   |   75 |   88 |       NULL |
+|     75 | Santhiya |   87 |   66 |       NULL |
+|     04 | Kalki    |   70 |   57 |       NULL |
++--------+----------+------+------+------------+
+5 rows in set (0.00 sec)
+
+
+
+7) Calculate total marks for each student and update in marks table.
+
+mysql> update marks set TotalMarks=M1+M2 where Name='Juhi';
+Query OK, 1 row affected (0.10 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update marks set TotalMarks=M1+M2 where Name='Sri';
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update marks set TotalMarks=M1+M2 where Name='Jahara';
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update marks set TotalMarks=M1+M2 where Name='Santhiya';
+Query OK, 1 row affected (0.06 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update marks set TotalMarks=M1+M2 where Name='Kalki';
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from marks;
++--------+----------+------+------+------------+
+| RollNo | Name     | M1   | M2   | TotalMarks |
++--------+----------+------+------+------------+
+|     86 | Juhi     |   80 |   60 |        140 |
+|     89 | Sri      |   60 |   80 |        140 |
+|     68 | Jahara   |   75 |   88 |        163 |
+|     75 | Santhiya |   87 |   66 |        153 |
+|     04 | Kalki    |   18 |   18 |         36 |
++--------+----------+------+------+------------+
+5 rows in set (0.00 sec)
+
+
+
+8) remove the 4 th rollno from studentprofile  table.
+
+mysql> delete from stu_det where RollNo=04;
+Query OK, 1 row affected (0.00 sec)
+
+
+
+9) Display all the records of both the tables.
+10) save your changes.
+
+mysql> select * from stu_det;
++--------+----------+-------------+--------+-----------+
+| RollNo | Name     | DateOfBirth | Dept   | City      |
++--------+----------+-------------+--------+-----------+
+|     86 | Juhi     | 1999-06-08  | EEE    | Thanjavur |
+|     89 | Sri      | 2001-09-08  | EEE    | Thanjavur |
+|     68 | Jahara   | 1970-08-15  | Social | Thanjavur |
+|     75 | Santhiya | 1999-03-16  | BMI    | CBE       |
++--------+----------+-------------+--------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> select * from marks;
++--------+----------+------+------+------------+
+| RollNo | Name     | M1   | M2   | TotalMarks |
++--------+----------+------+------+------------+
+|     86 | Juhi     |   80 |   60 |        140 |
+|     89 | Sri      |   60 |   80 |        140 |
+|     68 | Jahara   |   75 |   88 |        163 |
+|     75 | Santhiya |   87 |   66 |        153 |
+|     04 | Kalki    |   70 |   57 |        127 |
++--------+----------+------+------+------------+
+5 rows in set (0.00 sec)
+
+
+
+11) add two more columns average and grade to marks table.
+
+mysql> alter table marks add Average int;
+Query OK, 0 rows affected (0.10 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table marks add Grade char(12);
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+
+12) calculate the average for all the students.
+
+mysql> update marks set Average=TotalMarks/2;
+Query OK, 5 rows affected (0.05 sec)
+Rows matched: 5  Changed: 5  Warnings: 0
+
+mysql>  select * from marks;
++--------+----------+------+------+------------+---------+-------+
+| RollNo | Name     | M1   | M2   | TotalMarks | Average | Grade |
++--------+----------+------+------+------------+---------+-------+
+|     86 | Juhi     |   80 |   60 |        140 |      70 | NULL  |
+|     89 | Sri      |   60 |   80 |        140 |      70 | NULL  |
+|     68 | Jahara   |   75 |   88 |        163 |      82 | NULL  |
+|     75 | Santhiya |   87 |   66 |        153 |      77 | NULL  |
+|     04 | Kalki    |   18 |   18 |         36 |      18 | NULL  |
++--------+----------+------+------+------------+---------+-------+
+5 rows in set (0.00 sec)
+
+
+
+13) Calculate the grade (if both the marks are above 40 then grade should be pass
+if less than 40 grade should be fail).
+
+mysql> update marks set Grade='PASS' where Average>=40;
+Query OK, 2 rows affected (0.06 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update marks set Grade='FAIL' where Average<40;
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  select * from marks;
++--------+----------+------+------+------------+---------+-------+
+| RollNo | Name     | M1   | M2   | TotalMarks | Average | Grade |
++--------+----------+------+------+------------+---------+-------+
+|     86 | Juhi     |   80 |   60 |        140 |      70 | PASS  |
+|     89 | Sri      |   60 |   80 |        140 |      70 | PASS  |
+|     68 | Jahara   |   75 |   88 |        163 |      82 | PASS  |
+|     75 | Santhiya |   87 |   66 |        153 |      77 | PASS  |
+|     04 | Kalki    |   18 |   18 |         36 |      18 | FAIL  |
++--------+----------+------+------+------------+---------+-------+
+5 rows in set (0.00 sec)
+
+
+
+14) Remove the column average
+
+mysql> alter table marks DROP COLUMN Average;
+Query OK, 0 rows affected (0.13 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql>  select * from marks;
++--------+----------+------+------+------------+-------+
+| RollNo | Name     | M1   | M2   | TotalMarks | Grade |
++--------+----------+------+------+------------+-------+
+|     86 | Juhi     |   80 |   60 |        140 | PASS  |
+|     89 | Sri      |   60 |   80 |        140 | PASS  |
+|     68 | Jahara   |   75 |   88 |        163 | PASS  |
+|     75 | Santhiya |   87 |   66 |        153 | PASS  |
+|     04 | Kalki    |   70 |   57 |        127 | FAIL  |
++--------+----------+------+------+------------+-------+
+5 rows in set (0.00 sec)
+
+
+
+15) Remove all the records from the table
+
+mysql> truncate table stu_det;
+Query OK, 0 rows affected (0.23 sec)
+
+mysql> truncate table marks;
+Query OK, 0 rows affected (0.16 sec)
+
+
+
+16) confirm your changes
+
+mysql>  select * from stu_det;
+Empty set (0.00 sec)
+
+mysql>  select * from marks;
+Empty set (0.00 sec)
+
+
+
+
+
+
+
+
+
+
+
+

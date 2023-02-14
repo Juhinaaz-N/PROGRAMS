@@ -1,0 +1,280 @@
+mysql> use employee_details;
+Database changed
+
+mysql> alter table employees add TotalCommissions float(10,2);
+Query OK, 0 rows affected, 1 warning (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 1
+
+mysql> update employees set TotalCommissions=Salary*0.02;
+Query OK, 8 rows affected (0.06 sec)
+Rows matched: 8  Changed: 8  Warnings: 0
+
+mysql> select * from employees;
++----------+--------+------------+---------+--------------------+----------+------------------+
+| Name     | Emp_ID | DOJ        | Dept_ID | Dept               | Salary   | TotalCommissions |
++----------+--------+------------+---------+--------------------+----------+------------------+
+| Ryan     |   1616 | 2023-12-23 |      10 | Clerk              | 15000.00 |           300.00 |
+| Surendar |   1717 | 2023-10-23 |      10 | Clerk              | 15000.00 |           300.00 |
+| Lala     |   8158 | 2020-08-15 |      30 | Analyst            | 21000.00 |           420.00 |
+| Arjun    |   6262 | 2022-06-11 |      15 | Salesman           | 17000.00 |           340.00 |
+| Juhi     |   8986 | 1786-08-08 |      21 | Manager            | 35000.00 |           700.00 |
+| Jahara   |   1588 | 2023-08-15 |      10 | TechnicalStaff     | 28000.00 |           560.00 |
+| Sri      |   8815 | 2019-09-03 |      17 | TechnicalDesigning | 26000.00 |           480.00 |
+| Vishnu   |   8689 | 1789-06-09 |      21 | Manager            | 35000.00 |           700.00 |
++----------+--------+------------+---------+--------------------+----------+------------------+
+8 rows in set (0.00 sec)
+
+
+
+1. Display the total number of employees working in the company
+
+mysql> select count(Name) as EmployeesCount from employees;
++----------------+
+| EmployeesCount |
++----------------+
+|              8 |
++----------------+
+1 row in set (0.00 sec)
+
+
+2. Display the total salary and total commission to all employees
+
+mysql> select sum(Salary) as EmployeesSalary from employees;
++-----------------+
+| EmployeesSalary |
++-----------------+
+|       187000.00 |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> select sum(TotalCommissions) as Employees_TotalCommissions from employees;
++----------------------------+
+| Employees_TotalCommissions |
++----------------------------+
+|                    3740.00 |
++----------------------------+
+1 row in set (0.00 sec)
+
+
+3. Display the maximum salary from emp table.
+
+mysql> select max(Salary) from employees;
++-------------+
+| max(Salary) |
++-------------+
+|    35000.00 |
++-------------+
+1 row in set (0.05 sec)
+
+
+4.Display the hiredate of junior most employee.
+
+mysql> select max(DOJ) from employees;
++------------+
+| max(DOJ)   |
++------------+
+| 2023-12-23 |
++------------+
+1 row in set (0.03 sec)
+
+
+5.Display the average salary from emp table
+
+mysql>  select avg(Salary) from employees;
++--------------+
+| avg(Salary)  |
++--------------+
+| 23375.000000 |
++--------------+
+1 row in set (0.00 sec)
+
+
+6.Display the maximum salary being paid to CLERK.
+
+mysql> select max(Salary) from employees where Dept='Clerk';
++-------------+
+| max(Salary) |
++-------------+
+|    15000.00 |
++-------------+
+1 row in set (0.00 sec)
+
+
+7.Display the maximum salary being paid in dept no 20.
+
+mysql> select max(Salary) from employees where Dept_ID='20';
++-------------+
+| max(Salary) |
++-------------+
+|    30000.00 |
++-------------+
+1 row in set (0.00 sec)
+
+
+8.Display the minimum salary being paid to any SALESMAN.
+
+mysql> select min(Salary) from employees where Dept='Salesman';
++-------------+
+| min(Salary) |
++-------------+
+|    17000.00 |
++-------------+
+1 row in set (0.00 sec)
+
+
+9.Display the average salary drawn by managers.
+
+mysql> select avg(Salary) from employees where Dept='Manager';
++--------------+
+| avg(Salary)  |
++--------------+
+| 35000.000    |
++--------------+
+1 row in set (0.00 sec)
+
+
+
+10.Display the total salary drawn by analyst working in dept no 20
+
+mysql> select sum(Salary) from employees where Dept_ID=21;
++-------------+
+| sum(Salary) |
++-------------+
+|    70000.00 |
++-------------+
+1 row in set (0.00 sec)
+
+
+11. Display Department numbers and total number of employees working in each Department
+
+mysql> select Dept_ID ,count(Dept_ID) from employees group by Dept_ID;
++---------+----------------+
+| Dept_ID | count(Dept_ID) |
++---------+----------------+
+|      10 |              3 |
+|      30 |              1 |
+|      15 |              1 |
+|      21 |              2 |
+|      17 |              1 |
++---------+----------------+
+5 rows in set (0.00 sec)
+
+
+12. Display the various jobs and total number of employees working in each job group
+
+mysql> select Dept ,count(Dept) from employees group by Dept;
++--------------------+-------------+
+| Dept               | count(Dept) |
++--------------------+-------------+
+| Clerk              |           2 |
+| Analyst            |           1 |
+| Salesman           |           1 |
+| Manager            |           2 |
+| TechnicalStaff     |           1 |
+| TechnicalDesigning |           1 |
++--------------------+-------------+
+6 rows in set (0.00 sec)
+
+
+13.Display department numbers and Total Salary for each Department
+
+mysql> select Dept_ID ,sum(Salary) from employees group by Dept_ID;
++---------+-------------+
+| Dept_ID | sum(Salary) |
++---------+-------------+
+|      10 |    58000.00 |
+|      30 |    21000.00 |
+|      15 |    17000.00 |
+|      21 |    70000.00 |
+|      17 |    26000.00 |
++---------+-------------+
+5 rows in set (0.00 sec)
+
+
+14.Display department numbers and Maximum Salary from each Department
+
+mysql> select Dept_ID ,max(Salary) from employees group by Dept_ID;
++---------+-------------+
+| Dept_ID | max(Salary) |
++---------+-------------+
+|      10 |    28000.00 |
+|      30 |    21000.00 |
+|      15 |    17000.00 |
+|      21 |    35000.00 |
+|      17 |    26000.00 |
++---------+-------------+
+5 rows in set (0.00 sec)
+
+
+15.Display various jobs and Total Salary for each job
+
+mysql> select Dept ,sum(Salary) from employees group by Dept;
++--------------------+-------------+
+| Dept               | sum(Salary) |
++--------------------+-------------+
+| Clerk              |    30000.00 |
+| Analyst            |    21000.00 |
+| Salesman           |    17000.00 |
+| Manager            |    70000.00 |
+| TechnicalStaff     |    28000.00 |
+| TechnicalDesigning |    26000.00 |
++--------------------+-------------+
+6 rows in set (0.00 sec)
+
+
+17. Display the department Number with more than three employees in each department
+
+mysql> select Dept_ID from employees group by Dept_ID having count(Dept_ID)>=2;
++---------+
+| Dept_ID |
++---------+
+|      10 |
+|      21 |
++---------+
+2 rows in set (0.30 sec)
+
+
+
+18. Display various jobs along with total salary for each of the job where total salary is greater than 2500
+
+mysql> select Dept, sum(Salary) from employees group by Dept having sum(Salary)>20000;
++--------------------+-------------+
+| Dept               | sum(Salary) |
++--------------------+-------------+
+| Clerk              |    30000.00 |
+| Analyst            |    21000.00 |
+| Manager            |    70000.00 |
+| TechnicalStaff     |    28000.00 |
+| TechnicalDesigning |    26000.00 |
++--------------------+-------------+
+5 rows in set (0.00 sec)
+
+
+
+19. Display the various jobs along with total number of employees in each job.The output should contain only those jobs with more than three employees
+
+mysql> select Dept, count(Dept) from employees group by Dept having count(Dept)>=2;
++---------+-------------+
+| Dept    | count(Dept) |
++---------+-------------+
+| Clerk   |           2 |
+| Manager |           2 |
++---------+-------------+
+2 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
