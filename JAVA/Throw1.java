@@ -1,0 +1,15 @@
+import java.io.*;
+import java.lang.*;
+public class Throw1{
+public static void validate(int age){
+if(age<18){
+throw new ArithmeticException("Great");
+}else{
+System.out.println("Success");
+}
+}
+public static void main(String args[]){
+validate(8);
+System.out.println("ThankYou!!!");
+}
+}
