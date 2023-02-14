@@ -1,0 +1,31 @@
+.h
+{
+    height: 150px;
+    width: 170px;
+    background-color: orange;
+    overflow: auto;
+}
+
+.u
+{
+    height: 150px;
+    width: 170px;
+    background-color:purple;
+    overflow: scroll;
+}
+
+.i
+{
+    height: 150px;
+    width: 170px;
+    background-color:yellow;
+    overflow: visible;
+}
+
+.j
+{
+    height: 150px;
+    width: 170px;
+    background-color:purple;
+    overflow-x: hidden;
+}

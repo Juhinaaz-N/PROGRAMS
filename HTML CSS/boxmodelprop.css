@@ -1,0 +1,47 @@
+.header
+{
+    padding: 15px;
+    border: 1px solid red;
+    text-align: center;
+}
+
+.parent
+{
+    height: 30vh;
+    width: 100vh;
+    border: 1px solid plum;
+    margin: 6px;
+    text-align: center;
+}
+
+.child1
+{
+    padding: 8px;
+    border: 1px solid green;
+    margin: 6px;
+    text-align: center;
+}
+
+.child2
+{
+    padding: 30px;
+    border: 1px solid red;
+    margin: 6px;
+    text-align: center;
+}
+
+.child3
+{
+    padding: 8px;
+    border: 1px solid brown;
+    margin: 6px;
+    text-align: center;
+}
+
+.footer
+{
+padding: 15px;
+border: 1px solid blue;
+margin: 6px;
+text-align: center;
+}

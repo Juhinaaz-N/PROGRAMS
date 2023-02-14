@@ -1,0 +1,15 @@
+body{
+    background-image: radial-gradient(pink, purple);
+background-size: cover;
+height: 100vh;
+}
+
+.img
+{
+    height: 210px;
+    width: 230px;
+}
+
+h1{
+    color: blue;
+}

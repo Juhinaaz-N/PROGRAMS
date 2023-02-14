@@ -1,0 +1,105 @@
+header{
+    display: inline-flex;
+    opacity: 1.0;
+    color:white;
+}
+li{
+    display: inline-block;
+    padding-left:40px;
+}
+.calendar
+{
+    float: right;
+    margin-left: 660px;
+    position:relative;
+}
+.background
+{
+    background-color:black;
+}
+
+.button
+{
+    background-color: yellow;
+}
+.img
+{
+    background-image:url("http://www.campusvarta.com/uploads/2022/09/01/school-student1662000849.jpg");
+    background-size: cover;
+    height: 375px;
+}
+
+nav ul{
+    padding:8px ;
+    z-index:-1 ;
+    color: black ;
+    height:17px ;
+}
+
+nav ul li{
+    display: inline-block;
+    color:black;
+    padding-right: 116px;
+}
+
+
+.box0
+{
+    height: 116px;
+    width: 260px;
+    background-color:white ;
+    padding: 12px;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    border-left: 6px solid yellow;
+    margin-left: 192px;
+}
+
+.box5
+{
+    position: relative;
+    padding-top: 44px;
+}
+
+.box
+{
+    display: flex;
+}
+
+li{
+    list-style-type: none;
+}
+
+.box1
+{
+    height: 123px;
+    width: 305px;
+    background-color:yellow ;
+    padding: 12px;
+}
+
+.box2
+{
+    height: 134px;
+    width: 305px;
+    background-color: white ;
+    padding: 12px;
+   
+}
+
+.box3
+{
+    height: 134px;
+    width: 305px;
+    background-color:white ;
+    padding: 12px;
+}
+
+.box4
+{
+    height: 134px;
+    width: 305px;
+    background-color:white ;
+    padding: 12px;
+}

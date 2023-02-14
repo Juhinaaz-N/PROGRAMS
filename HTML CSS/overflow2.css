@@ -1,0 +1,23 @@
+.z
+{
+    height: 150px;
+    width: 170px;
+    background-color: orange;
+    overflow: scroll;
+}
+
+.u
+{
+    height: 150px;
+    width: 170px;
+    background-color:purple;
+    overflow-x: hidden;
+}
+
+.i
+{
+    height: 150px;
+    width: 170px;
+    background-color:yellow;
+    overflow: visible;
+}

@@ -1,0 +1,54 @@
+body
+{
+background-image: url("https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/BXoCcli6Gjgt702lg/videoblocks-vintage-barbershop-interior-movement-along-the-chairs-wooden-tables-and-mirrors-stylish-hair-studio-indoors-stylish-beauty-salon-design-with-modern-lighting-and-lamps_hofihbjqu_thumbnail-1080_01.png");
+color: azure;
+}
+
+.div1
+{
+background-image: linear-gradient(black,black);
+background-size: cover;
+opacity: 0.8;
+height: 100vh;
+}
+
+.header
+{
+    font-weight: bolder;
+    margin-top: 53px;
+    font-size: 26px;
+}
+
+.button1
+{
+    border-radius: 1.5px solid white;
+    color: black;
+    background-color: white;
+    height: 26px;
+    width: 120px;
+}
+
+.button2
+{
+    border-radius: 1.5px solid white;
+    color: black;
+    opacity: 0.8;
+    height: 26px;
+    width: 120px;
+}
+
+.div
+{
+    text-align: center;
+    margin-top: 158px;
+}
+
+h1{
+    font-weight: bolder;
+    font-size: 96px ;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h5{
+    font-size: 21px;
+}

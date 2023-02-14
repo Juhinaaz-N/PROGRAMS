@@ -1,0 +1,28 @@
+.h1
+{
+    text-align: center;
+    color: black;
+    font-size: x-large;
+}
+
+.body
+{
+color: aquamarine;
+font-size: x-large;    
+}
+
+.div1
+{
+    background-color:blue;
+    margin-right:auto;
+    margin-left: auto;
+    position:sticky;
+}
+
+.div2
+{
+   background-color: blueviolet;
+    margin-right:auto;
+    margin-left: auto;
+    position:fixed;
+}

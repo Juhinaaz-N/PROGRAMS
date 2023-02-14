@@ -1,0 +1,91 @@
+.j
+{
+    color: blue;
+}
+
+.u
+{
+    border-top: 1.7px solid skyblue;
+}
+
+h5{
+    background-color: yellow;
+    color: white;
+    height:21px;
+    width: 143px;
+    font-weight: bold;
+    margin-left: 675px;
+    font-size: large;
+}
+
+.img
+{
+    background-image: url("https://thumbs.dreamstime.com/b/happy-group-diverse-people-friends-family-team-together-standing-holding-hands-celebrating-success-water-reflection-sunset-49022123.jpg");
+    height: 48vh;
+    text-align: center;
+}
+
+nav ul{
+    padding:23px ;
+    z-index:-1 ;
+    color: black ;
+    height:17px ;
+}
+
+nav ul li{
+    display: inline-block;
+    color:black;
+    margin-left: 134px;
+}
+
+
+.box
+{
+    margin-left: 460px;
+    display: flex;
+}
+
+li{
+    list-style-type: none;
+}
+.box1
+{
+    height: 134px;
+    width: 178px;
+    background-color:orange ;
+    padding: 12px;
+}
+
+.box2
+{
+    height: 134px;
+    width: 178px;
+    background-color:skyblue ;
+    padding: 12px;
+   
+}
+
+.box3
+{
+    height: 134px;
+    width: 178px;
+    background-color:greenyellow ;
+    padding: 12px;
+}
+
+h3
+{
+    text-align: center;
+}
+.p1{
+    text-align: justify;
+    column-count: 3;
+    width:600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.h
+{
+    margin-left: 1061px;
+}

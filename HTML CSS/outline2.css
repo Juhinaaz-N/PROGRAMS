@@ -1,0 +1,57 @@
+.j
+{
+    outline:3px solid aquamarine ;
+    padding: 8px;
+}
+
+.u
+{
+    outline: 3px dashed aquamarine;
+    padding: 8px;
+}
+
+.h
+{
+    outline: 3px dotted aquamarine;
+    padding: 8px;
+}
+
+.i
+{
+    outline:3px double aquamarine;
+    padding: 8px;
+}
+
+.n
+{
+    outline: 3px groove aquamarine ;
+    padding: 8px;
+}
+
+.a
+{
+    outline:3px none aquamarine ;
+    padding: 8px;
+}
+
+.a{
+    outline: 3px ridge aquamarine;
+    padding: 8px;
+}
+
+.z
+{
+    outline: 3px inset aquamarine;
+    padding: 8px;
+}
+
+.s
+{
+    outline: 3px outset aquamarine;
+    padding: 8px;
+}
+
+body
+{
+    text-align: center;
+}

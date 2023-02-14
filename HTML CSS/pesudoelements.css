@@ -1,0 +1,63 @@
+.para::first-letter
+{
+    color: blueviolet;
+    font-size: xx-large;
+}
+
+.para1::first-line
+{
+    color: blue;
+}
+
+.para2::first-line
+{
+    color:brown;   
+}
+
+.para2::first-letter
+{
+    color:sandybrown; 
+    font-size: xx-large;  
+}
+
+.image::before
+{
+content:url(https://www.cs.mcgill.ca/~rwest/wikispeedia/wpcd/images/336/33621.jpg);
+}
+
+.image
+{
+    height: 88px;
+    width: 96px;  
+}
+
+.image1::after
+{
+content:url(https://i.pinimg.com/originals/9c/b0/70/9cb070d62dc738a0c3a1a408d68e4af5.jpg);
+}
+
+.image1
+{
+    height: 88px;
+    width: 96px;
+}
+
+body{
+   background-color: aquamarine;
+}
+.h3
+{
+  color: palevioletred;
+  text-align: center; 
+  font-family: Verdana, Geneva, Tahoma, sans-serif; 
+}
+
+.j::selection
+{
+    color:purple;
+}
+
+.u::marker
+{
+    color: purple;
+}

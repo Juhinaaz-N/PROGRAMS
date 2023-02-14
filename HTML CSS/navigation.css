@@ -1,0 +1,24 @@
+nav ul{
+    list-style-type: none;
+    background-color: gray;
+    padding: 15px;
+    word-spacing: 178px;
+    border-radius: 17px;
+}
+
+nav ul li{
+    color: white;
+    padding: 12px;
+    display: inline-block;
+}
+
+.active{
+    background-color:black ;
+    border-radius: 8px;
+    border-radius: 39%;
+}
+
+body{
+    font-size: xx-large;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

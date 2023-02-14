@@ -1,0 +1,43 @@
+table, th, td
+{
+    border:19x, solid,rgb(68, 128, 0)
+}
+
+th{
+    color: white;
+    background-color: green;
+}
+
+.td
+{
+    background-color: palevioletred;
+    color: white;
+}
+
+table{
+    height: 620px;
+    width: 800px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px;
+    border-collapse: collapse;
+}
+
+h1{
+    text-align: center;
+}
+
+tbody{
+    empty-cells:hide;
+}
+
+tbody tr:nth-child(odd)
+{
+    background-color:gray;
+}
+
+caption
+{
+    caption-side: top;
+}

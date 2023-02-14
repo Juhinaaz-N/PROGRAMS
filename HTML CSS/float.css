@@ -1,0 +1,31 @@
+.para1
+{
+    font-size:large;
+    color:plum;
+}
+
+.body
+{
+    background-color: rgb(128, 0, 68);
+}
+
+.h1
+{
+text-align: center;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+color: green;
+}
+
+.image1
+{
+    float:left ;
+    height: 210px;
+    width: 170px;
+}
+
+.image2
+{
+    float: right;
+    height: 210px;
+    width: 170px;
+}

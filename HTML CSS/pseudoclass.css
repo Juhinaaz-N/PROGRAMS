@@ -1,0 +1,33 @@
+.div1:first-child
+{
+color: blue;
+}
+
+a{
+    color: pink;
+}
+
+a:hover
+{
+    background-color: aquamarine;
+    color: navy;
+}
+
+a:link{
+    color: brown;
+}
+
+a:visited
+{
+    color: black;
+}
+
+p:nth-child(even)
+{
+    color: palegreen;
+}
+
+p:nth-child(odd)
+{
+    color: green;
+}

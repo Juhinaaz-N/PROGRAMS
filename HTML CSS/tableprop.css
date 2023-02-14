@@ -1,0 +1,30 @@
+.h1{
+    text-align: center;
+    color: purple;
+    
+}
+
+thead{
+    background-color: plum;
+}
+
+
+table{
+    border-collapse: collapse;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: auto;
+    caption-side: top;
+}
+
+th,td{
+    padding: 12px;
+}
+
+
+table,td,th{
+    height: 26px;
+    width: 53px;
+    border: 1.5px solid navy;
+}

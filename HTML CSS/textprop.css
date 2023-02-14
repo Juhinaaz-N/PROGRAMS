@@ -1,0 +1,29 @@
+.h2{
+text-align: center;
+text-shadow: 8px 8px 15px;
+color: navy;
+text-transform: uppercase;
+font-size: x-large;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+body{
+    background-color: aquamarine;
+}
+
+.para
+{
+    color: palevioletred;
+}
+
+.h3
+{
+    text-align: left;
+    color: blueviolet;
+    text-decoration: underline; 
+}
+
+.para1
+{
+    color: brown;
+}

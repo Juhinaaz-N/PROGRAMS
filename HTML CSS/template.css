@@ -1,0 +1,38 @@
+body{
+    background-image:linear-gradient(to right, yellow,red);
+}
+
+nav ul{
+    list-style-type: none;
+    word-spacing: 17px;
+}
+
+nav ul li{
+    color: white;
+    display: inline-block;
+    padding: 12px;
+}
+
+ul{
+    font-size:x-large;
+    text-align: right;
+    padding-top: 12px;
+    padding-right: 15px;
+}
+
+.p
+{
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.p1
+{
+    padding: 210px;
+}
+
+.button
+{
+    border-radius: 35px;
+    padding: 8px;
+}

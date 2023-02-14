@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<title>TABLE-FORM</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body style="text-align:center; background-color:pink;" >
+    <h1> WELCOME !</h1>
+<form>
+<textarea placeholder="Enter comments"></textarea>
+    <label>Username</label>
+    <input type="text" name="Username"
+    id="Username"Value="
+    placeholder="Enter the username"></input>
+    </form>
+<thead>
+<tr>
+<th colspan="5">MARKSHEET</th>
+</tr>
+<tr>
+<th>S.NO</th><th colspan="2">NAME</th><th>INITIAL</th><th>GENDER</th>
+</tr>
+</thead>
+</table>
+    </body>
+    </html>

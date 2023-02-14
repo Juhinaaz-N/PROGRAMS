@@ -1,0 +1,48 @@
+h1{
+    text-align: center;
+    color: navy;
+    cursor:pointer;
+}
+
+.s
+{
+    color: purple;
+    cursor: progress;
+}
+
+.n
+{
+    color: purple;
+    cursor: crosshair;
+}
+
+.j
+{
+    color: purple;
+    cursor: wait;  
+}
+
+.p1
+{
+    cursor: help ;
+}
+
+.p2
+{
+    cursor: grab;
+}
+
+.p3
+{
+    cursor: copy;
+}
+
+.p4
+{
+    cursor: cell;
+}
+
+.p5
+{
+    cursor: all-scroll;
+}

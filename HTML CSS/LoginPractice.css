@@ -1,0 +1,14 @@
+body
+{
+    text-align: center;
+    background-image: url("https://assets-global.website-files.com/5e39e095596498a8b9624af1/5f6e93d250a6d04f4eae9f02_Backgrounds-WFU-thumbnail-(size).jpg");
+    background-size: cover;
+}
+
+h1{
+    color:purple;
+    font-weight: bolder;
+    font-size: xx-large;
+    font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

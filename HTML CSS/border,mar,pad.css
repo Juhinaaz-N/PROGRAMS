@@ -1,0 +1,39 @@
+.j
+{
+width: 200px;
+height: 200px;
+background-color: brown;
+padding: 0px 17px 15px 0px;
+margin:8px;
+}
+
+.u
+{
+    width: 200px;
+    height: 200px;
+    border: 20px solid burlywood;
+    background-color: brown;
+    padding: 0px 17px 15px 0px;
+    margin:8px;
+}
+
+.h
+{
+    width: 200px;
+    height: 200px;
+    border: 20px solid bisque;
+    background-color: brown;
+    padding: 20px;
+    margin:8px;
+}
+
+
+.i
+{
+    width: 200px;
+    height: 200px;
+    border: 20px solid burlywood;
+    background-color: brown;
+    padding: 20px;
+    margin: 20px;
+}

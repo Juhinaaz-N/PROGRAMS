@@ -1,0 +1,34 @@
+h1
+{
+    text-align: center;
+    color:navy;
+    background-color: aqua;
+    font-size: x-large;
+}
+
+.body
+{
+color: aquamarine;   
+}
+
+.div1
+{
+    background-color:salmon;
+    margin-right:auto;
+    margin-left: auto;
+    position:static;
+}
+
+.div2
+{
+    background-color: salmon;
+    margin-right:auto;
+    margin-left: auto;
+    position:relative;
+}
+
+.div3
+{
+    background-color:saddlebrown;
+    position: absolute;
+}

@@ -1,0 +1,79 @@
+body
+{
+    background-image: url("https://static.toiimg.com/thumb/msid-58324814,width-400,resizemode-4/58324814.jpg");
+    background-size: cover;
+}
+
+h1
+{
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.button1{
+    background-color: red;
+    color: white;
+    height: 30px;
+    width: 125px;
+    font-weight: bolder;
+    font-size: 26px;
+}
+
+.button2{
+    background-color: red;
+    color: white;
+    height: 23px;
+    width: 107px;
+    font-weight: bolder;
+    font-size: 12px;
+}
+
+nav ul{
+    padding:23px ;
+    z-index:-1 ;
+    background-color:black ;
+    opacity:0.1 ;
+    height:17px ;
+}
+
+nav ul li{
+    display: inline-block;
+    color:whitesmoke;
+    margin-left: 134px;
+}
+
+.p
+{
+    margin-left: 150px;
+    margin-top: 80px;
+}
+
+.j
+{
+    background-color: red;
+    color: white;
+    height: 21px;
+    width: 19px;
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+.u
+{
+    background-color:black;
+    color: white;
+    height: 21px;
+    width: 19px;
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+.h
+{
+    background-color:black;
+    color: white;
+    height: 21px;
+    width: 19px;
+    font-weight: bolder;
+    font-size: 15px;
+}

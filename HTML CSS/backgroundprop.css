@@ -1,0 +1,43 @@
+body{
+    background-color:gray;
+}
+
+.clip
+{
+    background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReW2L45MjI2oghNgyJZUrY4ac-N6u2z8f2pg&usqp=CAU.png);
+    background-clip: content-box;
+    border: 3px dotted purple;
+}
+
+.h1
+{
+text-align: center;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+color: green;
+}
+
+.h3
+{
+    font-size: large;
+    color:green;
+}
+
+.para
+{
+    color: azure;
+    background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToJ7sBNgEbO6HOp0jAb_gXyAt3UY-wgH0bZlUYhNodDNxN_W-jWDbH_ab7ZEuwJXblVdA&usqp=CAU.png);
+}
+
+.para1
+{
+    font-size: xx-large;
+    color: azure;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg9EeSJgtad5jWkky-iMisJi7UFWOUu2Cg2w&usqp=CAU.png);
+}
+
+.para2
+{
+    font-size: xx-large;
+    color: azure;
+    background-image: url(https://i.pinimg.com/originals/a4/96/c2/a496c2b6bc5d7cfe0e0674f6598c38ad.jpg);
+}

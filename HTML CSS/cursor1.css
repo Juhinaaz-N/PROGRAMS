@@ -1,0 +1,28 @@
+h1{
+    text-align: center;
+    color: orangered;
+    cursor:pointer;
+}
+
+p{
+    color: navy;
+    cursor: progress;
+}
+
+.img
+{
+    cursor: wait;
+    color:yellow;
+}
+
+.h{
+    color: purple;
+    font-weight: bold;
+    cursor: crosshair;
+}
+
+.i
+{
+    cursor: help;
+    color: cyan;
+}

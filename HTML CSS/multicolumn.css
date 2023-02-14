@@ -1,0 +1,75 @@
+.h1
+{
+    color: black;
+    font-size: 88px;
+    font-weight: bolder;
+    text-decoration: overline;
+    text-decoration-color: grey;
+    text-align: center;
+}
+
+.h5
+{
+    background-color: gray;
+    color: black;
+    padding: 8px;
+    word-spacing: 15px;
+    text-align: center;
+    font-size: large;
+}
+
+span
+{
+    color: red;
+    font-weight: bolder;
+    font-size: 88px;
+}
+
+.foot
+{
+    color: black;
+    font-size:large;
+    text-align: center;
+}
+
+.p1{
+    -webkit-column-count: 3;
+    -webkit-column-gap: 57px;
+    padding: 26px;
+}
+
+.p2
+{
+    padding:80px 15px 15px 80px ;
+    height: 15vh;
+    width: 51vw;
+    background-color: grey;
+}
+
+.p3
+{
+    position: relative;
+    text-align: justify;
+    column-count:2;
+    left: 912px;
+    bottom: 210px;
+    width: 35%;
+}
+
+hr{
+border: 3px solid black;
+margin-bottom: 30%;
+}
+
+.p4
+{
+-webkit-column-count: 3;
+        -webkit-column-gap: 57px;
+        -webkit-column-rule: 1.2px solid palevioletred ;
+        padding: 26px;
+        text-align: justify;
+        position: relative;
+        bottom: 350px;
+    }
+
+    
