@@ -1,0 +1,28 @@
+body
+{
+    background-color: plum;
+    text-align: center;
+    background-image: url("https://coolbackgrounds.io/images/backgrounds/index/sea-edge-79ab30e2.png");
+    background-size: cover;
+}
+
+.icons
+{
+    font-size: 15px;
+    margin-left: 44px;
+    color:orangered;
+}
+
+.icon
+{
+    font-size: 88px;
+    margin-left: 62px;
+    color:orangered;
+}
+
+.butt
+{
+    border: 1px solid black;
+    border-radius: 6px;
+    margin-left: 62px;
+}

@@ -1,0 +1,29 @@
+body
+{
+    text-align: center;
+}
+
+h3
+{
+    font-size: xx-large;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+
+.black-text
+{
+    color: black !important;
+    font-size: larger;
+}
+
+.green-text
+{
+    color: green;
+    font-size: larger;  
+}
+
+#orange-text
+{
+    color:orange;
+}

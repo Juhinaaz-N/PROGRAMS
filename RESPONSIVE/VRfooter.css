@@ -1,0 +1,25 @@
+.icons
+{
+    font-size: 62px;
+    color: white;
+}
+
+.icon{
+border-radius: 57px;
+margin: 12px;
+}
+
+body{
+    background-color: black;
+    color: gray;
+}
+
+hr
+{
+    background-color: gray;
+}
+
+h6{
+    font-weight: bolder;
+    font-size: larger;
+}

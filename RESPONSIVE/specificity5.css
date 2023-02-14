@@ -1,0 +1,15 @@
+body
+{
+    font-size: large;
+}
+
+.blue-bg
+{
+    background-color: dodgerblue;
+    font-size: xx-large;
+}
+
+.orange-bg
+{
+    background-color: orange !important;
+}

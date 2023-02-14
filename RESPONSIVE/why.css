@@ -1,0 +1,26 @@
+.img
+{
+    height: 24vh;
+    width: 15vw;
+    padding-top: 10px;
+}
+
+h2
+{
+ font-size: xx-large;
+ color: purple;
+}
+
+.section
+{
+    background-color: pink;
+}
+
+.wcard
+{
+    background-color: plum;
+    color: deeppink;
+    border-radius: 8px;
+    border: 1px solid darkmagenta;
+    text-align: center;
+}

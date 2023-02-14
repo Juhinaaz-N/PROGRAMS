@@ -1,0 +1,23 @@
+body
+{
+    background-color: antiquewhite;
+}
+
+h1
+{
+    color: blue;
+    font-weight: bolder;
+}
+
+h2
+{
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+.li
+{
+    color: gray;
+    font-style: italic;
+    text-decoration: line-through;
+}

@@ -1,0 +1,39 @@
+h4
+{
+    color: #cced00;
+    font-weight: bold;
+}
+
+h1{
+    color: white;
+    font-size: larger;
+}
+
+h2
+{
+    color: white;
+}
+
+p
+{
+    color:gray;
+}
+
+.img
+{
+    height: 96px;
+    width: 120px;
+    border-radius: 53%;
+}
+
+body
+{
+    background-color:#323f4b;
+}
+
+.card
+{
+    height: 44vh;
+    width: 44vw;
+    background-color: #9aa5b1;
+}

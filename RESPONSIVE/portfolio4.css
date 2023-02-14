@@ -1,0 +1,18 @@
+body
+{
+    background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/portfolio-work-done-bg.png");
+    background-size: cover;
+    height: 100vh;
+}
+
+.icons
+{
+    padding: 17px;
+    color: white;
+}
+
+hr
+{
+    background-color: white;
+    width: 100px;
+}

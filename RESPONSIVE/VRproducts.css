@@ -1,0 +1,20 @@
+.img1
+{
+    background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/vr-products-headset-img.png");
+    background-size: cover;
+    height: 100vh;
+    color: white;
+}
+
+.img2
+{
+    background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/vr-products-headset-with-controllers-img.png");
+    background-size: cover;
+    height: 100vh;
+    color: white;
+}
+
+.div1
+{
+    padding-top: 510px;
+}

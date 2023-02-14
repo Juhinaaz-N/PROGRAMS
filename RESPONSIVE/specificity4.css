@@ -1,0 +1,19 @@
+.container{
+    background-color: aqua;
+}
+
+.container
+{
+    background-color: lightgrey;
+    text-align: center;
+}
+
+.heading
+{
+    color: blue;
+}
+
+#description
+{
+    font-size: 20px;
+}

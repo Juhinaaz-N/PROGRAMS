@@ -1,0 +1,28 @@
+.para1{
+  color: greenyellow;
+  background-color:brown;
+  font-size: small;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 35vh;
+    width: 57vw;
+}
+
+.para2{
+    color: purple;
+    background-color:bisque;
+    font-size: large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 8vh;
+    width: 80vw;
+    padding: 21px;
+}
+
+#para
+{
+    color: gold;
+    background-color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 8vh;
+    width: 80vw;
+    padding: 12px;
+}

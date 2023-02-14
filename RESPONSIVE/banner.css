@@ -1,0 +1,26 @@
+.banner-section
+{
+    background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/vr-banner-bg.png");
+    background-size: cover;
+    height: 83vh;
+    text-align: center;
+}
+
+.banner-heading
+{
+    font-size:60px;
+    font-weight: bolder;
+    color: lawngreen;
+}
+
+.banner-button
+{
+background-color: black;
+color: white;
+border-radius: 6px;
+font-size: medium;
+}
+
+li{
+    list-style-type: none;
+}

@@ -1,0 +1,36 @@
+*
+{
+    box-sizing: border-box;
+}
+
+.header
+{
+    padding: 8px;
+    border: 4.4px solid yellow;
+}
+
+.content1
+{
+    
+    padding: 8px;
+    border: 2px solid navy;
+}
+
+.content2
+{
+    
+    padding: 8px;
+    border: 2px solid palevioletred;
+}
+
+.content3
+{
+    padding: 8px;
+    border: 2px solid navy;
+}
+
+.row
+{
+    margin-right: 21px;
+    margin-left: 21px;
+}

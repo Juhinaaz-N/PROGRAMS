@@ -1,0 +1,22 @@
+h3
+{
+    color: yellow;
+}
+
+h1{
+    color: white;
+}
+
+body{
+    background-color:gray;
+}
+
+.cardbackground{
+    background-color: #323f4b; 
+    border-radius: 5px;
+}
+
+.images{
+    width: 100px;
+    height: 100px;
+}
